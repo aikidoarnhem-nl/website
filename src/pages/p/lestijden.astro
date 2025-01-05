@@ -1,0 +1,166 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import FeaturesList from '../features.astro';
+const metadata = {
+  title: 'Lestijden',
+};
+---
+<Layout metadata={metadata}>
+
+  <Content
+    items={[
+      {
+        icon: 'tabler:calendar',
+        pretitle:
+          'Maandagen \t\t 20:15 - 21:45 \t',
+        title: 'Volwassenen',
+        callToAction: {
+          text: 'Door Sabine',
+          href: 'mailto:sabine@aikidoarnhem.nl',
+          icon: 'tabler:mail'
+        },
+      },
+      {
+        icon: 'tabler:calendar',
+        pretitle:
+          'Donderdagen \t 18:30 - 19:30 \t',
+        title: 'Jeugd',
+        description: '8 tot 15 jaar',
+        callToAction: {
+          text: 'Door Pimm',
+         
+        },
+      },
+      {
+        icon: 'tabler:calendar',
+        pretitle:
+          'Donderdagen \t 19:00 - 20:30 \t',
+        title: 'Volwassenen',
+        callToAction: {
+          text: 'Door Edy',
+          href: 'mailto:edy@aikidoarnhem.nl',
+          icon: 'tabler:mail'
+        },
+      },
+      {
+        icon: 'tabler:calendar',
+        description: 'Check de kalender voor uitzonderingen',
+        pretitle:
+          'Zondagen \t\t 09:30 - 11:30 \t',
+        title: 'Gevorderden',
+        callToAction: {
+          text: 'Door Edy',
+          href: 'mailto:edy@aikidoarnhem.nl',
+          icon: 'tabler:mail'
+        },
+      },
+      ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Lestijden Arnhem</h3>
+      Locatie 't Luifeltje, Dunoweg 2, 6825 ED Arnhem Presikhaaf
+    </Fragment>
+</Content>
+
+<Content
+    items={[
+      {
+        icon: 'tabler:calendar',
+        pretitle:
+          'Dinsdagen \t 17:30 - 19:00 \t',
+        title: 'Volwassenen',
+        callToAction: {
+          text: 'Door Edy en Yvon',
+          href: 'mailto:edy@aikidoarnhem.nl',
+          icon: 'tabler:mail'
+        },
+      },
+      {
+        icon: 'tabler:calendar',
+        description: '8 tot 12 jaar',
+        pretitle:
+          'Woensdagen \t 16:45 - 17:45 \t',
+        title: 'Kinderen',
+        callToAction: {
+          text: 'Door Jeroen',
+          href: 'mailto:jeroen@aikidoarnhem.nl',
+          icon: 'tabler:mail'
+        },
+      },
+      {
+        icon: 'tabler:calendar',
+        description: '12 tot 17 jaar',
+        pretitle:
+          'Woensdagen \t 18:00 - 19:00 \t',
+        title: 'Jeugd',
+        callToAction: {
+          text: 'Door Jeroen',
+          href: 'mailto:jeroen@aikidoarnhem.nl',
+          icon: 'tabler:mail'
+        },
+      },
+      {
+        icon: 'tabler:calendar',
+        description: '',
+        pretitle:
+          'Vrijdagen \t 19:45 - 21:15 \t',
+        title: 'Volwassenen',
+        callToAction: {
+          text: 'Door Eltje',
+          href: 'mailto:eltje@aikidoarnhem.nl',
+          icon: 'tabler:mail'
+        },
+      },
+      ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Lestijden Wageningen</h3>
+      Locatie trainingscentrum KenKon, Nieuwe Kanaal 11, 6709 PA Wageningen
+    </Fragment>
+</Content>
+
+  <Features
+    title="Vakanties"
+    items={[
+      {
+        title: 'Arnhem kinderen/jeugd',
+        description:
+          'Er zijn geen jeugd en kinderlessen tijdens de basisschool-vakantie in regio zuid Nederland.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Wageningen kinderen/jeugd',
+        description:
+          'Er zijn geen jeugd en kinderlessen tijdens de basisschool-vakantie in regio midden Nederland.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Arnhem zomer',
+        description:
+          'Er zijn geen lessen binnen tijdens de basisschool zomervakantie in regio zuid Nederland hebben.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Wageningen zomer',
+        description:
+          'Er zijn geen lessen binnen tijdens de basisschool zomervakantie in regio midden Nederland. In die periode zijn er wel elke dinsdag wapenlessen buiten in het Belmonte Arboretum van 18:00 - 19:30.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Feestdagen',
+        description:
+          'Op officiële feestdagen geven we geen les. Er is geen les op goede vrijdag, 2e paasdag, koninginnedag, hemelvaartsdag de vrijdag na hemelvaart en 2e pinksterdag. In de kerst vakantie is er ook geen les.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: '5 mei',
+        description:
+          'In Wageningen geven we geen les op 5 mei.',
+        icon: 'tabler:calendar',
+      },
+    ]}
+  />
+
+</Layout>

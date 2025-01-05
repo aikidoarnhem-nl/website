@@ -1,0 +1,58 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Contact" title="Laten we kennismaken!">
+    <Fragment slot="subtitle">
+      Mail voor meer informatie naar: <a href="mailto:aikido@aikidoarnhem.nl">aikido@aikidoarnhem.nl</a>. De email adressen van de leraren zijn te vinden op de leraren pagina.
+    </Fragment>
+  </HeroText>
+
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="We zijn hier om te helpen!"
+    items={[
+      {
+        title: 'Algemene vragen',
+        description: 'Onderaan op onze homepagina is een FAQ opgenomen. Mail ons gerust als je vraag daar niet tussen staat.',
+      },
+      {
+        title: 'Lesgeld',
+        description:
+          'Op onze aanmeldpagina staat alles over de kosten uitgelegd. We helpen je graag verder als je hier vragen over hebt.',
+      },
+      {
+        title: 'Lesinhoud',
+        description:
+          'Als je vragen hebt over de inhoud van de lessen kan je het beste met de lesgever contact opnemen. Zij maken voor of na de les hiervoor graag ruimte!',
+      },
+      {
+        title: 'Email',
+        description: 'aikido@aikidoarnhem.nl',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Locatie',
+        description: `'t Luifeltje, Dunoweg 2, 6825 ED Arnhem Presikhaaf`,
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Telefonisch',
+        description: 'niet bereikbaar',
+        icon: 'tabler:headset',
+      },
+    ]}
+  />
+</Layout>
