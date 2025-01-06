@@ -1,0 +1,49 @@
+<chat-bot></chat-bot>
+
+<script>
+    function hawkaiLoad() {
+        window['HawkAI'].chatBot.create({
+            botId: "e1cbb8ac-64b8-4724-8069-be5f2560415a",
+            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoib3JnYXBpa2V5Iiwia2V5IjoiZDQwOTk4YmQ0M2ZjY2Q2ZWNlZGQ2NjcwNjZkMzg2MmZiNmE1MjA3ZTI2MGE3ZmNmODEwOWYyNTg3ZGY1MjYxZiIsImlhdCI6MTczNjE3NDY2NH0.m_GPTAPL8pGlRCYtpl5op-O6Aoxh17iXOnu3TTsjhsc",
+            theme: {
+                text: {
+                    chat: {
+                        placeholder: "Type hier / type here",
+                        button: "Praat met de grondlegger",
+                    },
+                    header: {
+                        heading: "Morihei Ueshiba",
+                        subtext: "in verbinding met de grondlegger",
+                    },
+                },
+                startQuestion:
+                    "Vertel me je gedachten, tell me your thoughts, ok?",
+                style: {
+                    colors: {
+                        fcbDarkPurple: "#000080",
+                        fcbYellow: "#00ff00",
+                        fcbGreen: "#0161ef",
+                        fcbPurple: "#0161ef",
+                    },
+                },
+                privacyUrl: '/privacy',
+                avatarUrl: 'https://aikidostgratien95.fr/local/cache-vignettes/L510xH570/osensei4-08d43.jpg?1729423506'
+            },
+        });
+    };
+
+    class chatBot extends HTMLElement {
+        connectedCallback() {
+            if (typeof window['HawkAI'] === 'undefined') {
+                var scriptTag = document.createElement("script");
+                scriptTag.src = 'https://cdn.hawkai.app/install.js';
+                scriptTag.async = true;
+                scriptTag.onload = hawkaiLoad;
+                document.body.appendChild(scriptTag);
+            } else {
+                hawkaiLoad();
+            }
+        }
+    }
+    customElements.define("chat-bot", chatBot);
+</script>
