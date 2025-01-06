@@ -12,7 +12,7 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import FeaturesList from './features.astro';
-
+import Chatbot from '~/components/widgets/Chatbot.astro';
 
 const metadata = {
   title: 'Aikidoschool Sankaku Arnhem/Wageningen',
@@ -21,6 +21,9 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+
+  <Chatbot/>
+
   <!-- Hero Widget ******************* -->
 
   <Hero
