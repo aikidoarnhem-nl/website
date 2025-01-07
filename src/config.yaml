@@ -1,6 +1,6 @@
 site:
   name: 'Aikidoschool Sankaku'
-  site: 'https://astrowind.vercel.app'
+  site: 'https://www.aikidoarnhem.nl'
   base: '/'
   trailingSlash: false
 
