@@ -45,5 +45,7 @@
             }
         }
     }
-    customElements.define("chat-bot", chatBot);
+    if (!customElements.get('chat-bot')) { 
+        customElements.define("chat-bot", chatBot);
+    }
 </script>
