@@ -1,0 +1,70 @@
+---
+const {
+    header = "Header",
+    title = "Title",
+    href = "https://www.google.com/maps/",
+    location = "Address",
+    mapid = "just-an-id",
+    centerLat = 51.9817756,
+    centerLng = 5.97274,
+    locationLat = 51.9817756,
+    locationLng = 5.972745,
+} = Astro.props;
+---
+
+<google-map 
+    data-mapid={mapid}
+    data-title={title}
+    data-location={location}
+    data-centerlat={centerLat} 
+    data-centerlng={centerLng}
+    data-locationlat={locationLat}
+    data-locationlng={locationLng}
+    > 
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        {header}
+    </h3>
+    <h2>
+        <a
+            target="_blank"
+            title="Open in Google maps"
+            style="color: navy;"
+            href={href}
+            >{title}, {location}</a>
+    </h2>
+    <div style="height:300px; width:500px;"></div>
+</google-map>
+
+<script>
+    class googleMap extends HTMLElement {
+        async connectedCallback() {
+            const google = window["google"];
+            const { Map } = await google.maps.importLibrary("maps");
+            const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+            const amap = new Map(this.querySelector("div"), 
+            {
+                zoom:14,
+                center:new google.maps.LatLng(this.dataset.centerlat,this.dataset.centerlng),
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                mapId: this.dataset.mapid,
+            });
+            const marker = new AdvancedMarkerElement({
+                map: amap,
+                position: { lat:parseFloat(this.dataset.locationlat!), lng: parseFloat(this.dataset.locationlng!) },
+            });
+            const infowindow = new google.maps.InfoWindow({
+                content:`<strong>${this.dataset.title}</strong><br>${this.dataset.location}`
+            });
+            google.maps.event.addListener(marker, 'click', function(){infowindow.open(amap,marker);});
+            infowindow.open(amap,marker);
+        }
+    }
+    if (!customElements.get("google-map")) {
+        customElements.define("google-map", googleMap);
+    }
+</script>
+
+<script is:inline>
+   	(g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
+       ({ key: "AIzaSyDiznmx1__okl084dhW0TmUaM6JiOPN2YI", v: "weekly" });
+</script>
