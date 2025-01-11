@@ -3,7 +3,8 @@ const {
     header = "Header",
     title = "Title",
     href = "https://www.google.com/maps/",
-    location = "Address",
+    address = "Address",
+    city = "City",
     mapid = "just-an-id",
     centerLat = 51.9817756,
     centerLng = 5.97274,
@@ -15,7 +16,8 @@ const {
 <google-map 
     data-mapid={mapid}
     data-title={title}
-    data-location={location}
+    data-address={address}
+    data-city={city}
     data-centerlat={centerLat} 
     data-centerlng={centerLng}
     data-locationlat={locationLat}
@@ -30,7 +32,7 @@ const {
             title="Open in Google maps"
             style="color: navy;"
             href={href}
-            >{title}, {location}</a>
+            >{title}, {address}, {city}</a>
     </h2>
     <div style="height:300px; width:500px;"></div>
 </google-map>
@@ -53,7 +55,7 @@ const {
                 position: { lat:parseFloat(this.dataset.locationlat!), lng: parseFloat(this.dataset.locationlng!) },
             });
             const infowindow = new google.maps.InfoWindow({
-                content:`<strong>${this.dataset.title}</strong><br>${this.dataset.location}`
+                content:`<strong>${this.dataset.title}</strong><br>${this.dataset.address}<br>${this.dataset.city}`
             });
             google.maps.event.addListener(marker, 'click', function(){infowindow.open(amap,marker);});
             infowindow.open(amap,marker);
