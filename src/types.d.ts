@@ -133,6 +133,7 @@ export interface Stat {
 }
 
 export interface Item {
+  pretitle?: string;
   title?: string;
   description?: string;
   icon?: string;
