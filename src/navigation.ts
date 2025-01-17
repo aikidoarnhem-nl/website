@@ -38,10 +38,6 @@ export const headerData = {
           text: 'Inschrijven',
           href: getPermalink('/landing/inschrijven'),
         },
-        {
-          text: 'Opzeggen',
-          href: getPermalink('/landing/opzeggen'),
-        },
       ],
     },
     {
