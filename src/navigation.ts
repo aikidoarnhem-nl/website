@@ -46,7 +46,8 @@ export const headerData = {
     },
     {
       text: 'Blogs',
-      links: [
+      href: getBlogPermalink()
+        //links: [
         // {
         //   text: 'Blog List',
         //   href: getBlogPermalink(),
@@ -63,11 +64,11 @@ export const headerData = {
         //   text: 'Category Page',
         //   href: getPermalink('tutorials', 'category'),
         // },
-        {
-          text: 'Aikido blogs',
-          href: getPermalink('aikido', 'tag'),
-        },
-      ],
+        // {
+        //   text: 'Aikido blogs',
+
+        // },
+        //],
     },
     {
       text: 'Ledeninfo',
