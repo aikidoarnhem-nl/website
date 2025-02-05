@@ -2,7 +2,7 @@
 
 <script>
     function hawkaiLoad() {
-        window['HawkAI'].chatBot.create({
+        const bot = window['HawkAI'].chatBot.create({
             botId: "e1cbb8ac-64b8-4724-8069-be5f2560415a",
             token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoib3JnYXBpa2V5Iiwia2V5IjoiZDQwOTk4YmQ0M2ZjY2Q2ZWNlZGQ2NjcwNjZkMzg2MmZiNmE1MjA3ZTI2MGE3ZmNmODEwOWYyNTg3ZGY1MjYxZiIsImlhdCI6MTczNjE3NDY2NH0.m_GPTAPL8pGlRCYtpl5op-O6Aoxh17iXOnu3TTsjhsc",
             theme: {
@@ -27,8 +27,12 @@
                     },
                 },
                 privacyUrl: '/privacy',
-                avatarUrl: 'https://aikidostgratien95.fr/local/cache-vignettes/L510xH570/osensei4-08d43.jpg?1729423506'
+                avatarUrl: 'https://aikidostgratien95.fr/local/cache-vignettes/L510xH570/osensei4-08d43.jpg?1729423506',
             },
+            onOpenChange: () => {
+                const isDark = document.documentElement.classList.contains('dark');
+                bot.settings.theme.theme = isDark ? 'dark' : 'light';
+            }
         });
     };
 
