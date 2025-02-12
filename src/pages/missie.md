@@ -3,7 +3,7 @@ title: 'Missie'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-_Last updated_: January 05, 2025
+_Laatst bijgewerkt_: 5 januari 2025
 
 Stichting Sankaku
 -----------------
