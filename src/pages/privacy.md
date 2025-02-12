@@ -3,8 +3,7 @@ title: 'AVG Policy'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-_Last updated_: January 04, 2025
-
+_Laatst bijgewerkt_: 4 januari 2025
 
 Algemeen
 --------

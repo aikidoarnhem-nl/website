@@ -129,7 +129,11 @@ export const headerData = {
 
 export const footerData = {
   links: [
-    {}, {}, {
+    {}, {
+      links: [
+        { text: 'Vertrouwenspersoon', href: '/vertrouwenspersoon' },
+      ]
+    }, {
       links: [
         { text: 'Samenvatting', href: '/samenvatting'},
         { text: 'Summary', href: '/summary'},
