@@ -1,10 +1,8 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
@@ -12,17 +10,14 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import FeaturesList from './features.astro';
-import Chatbot from '~/components/widgets/Chatbot.astro';
 
 const metadata = {
-  title: 'Aikidoschool Sankaku Arnhem/Wageningen',
+  title: 'Aikido in Arnhem - Lessen voor Beginners en Gevorderden',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-
-  <Chatbot/>
 
   <!-- Hero Widget ******************* -->
 
@@ -36,7 +31,7 @@ const metadata = {
       },
       { text: 'Ontdek meer', href: '#voordelen' },
     ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'Aikido Hero Image' }}
+    image={{ src: '~/assets/images/hero-image.png', alt: 'Aikido lessen voor beginners in Arnhem', title: "Leer Aikido in Arnhem - lessen voor beginners en gevorderden" }}
   >
     <Fragment slot="title">
       Ontdek de kracht van <span class="hidden xl:inline">balans en zelfvertrouwen bij</span>
@@ -45,9 +40,9 @@ const metadata = {
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">Aikidoschool Sankaku</span> is de plek om dit te ontdekken!</span
+        <span class="font-semibold">Aikidoschool Sankaku</span> is de plek in Arnhem om dit te ontdekken!</span
       >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">Sankaku is er voor jou!</span>
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">Aikido Arnhem is er voor jou!</span>
       Leer fysieke technieken voor zelfverdediging, ontwikkel je innerlijke kracht, balans en zelfvertrouwen. 
       Aikido is meer dan een vechtsport; het is een levensfilosofie die je helpt om stress te verminderen, 
       harmonie te vinden in jezelf en met anderen, en sterker in het leven te staan, zowel mentaal als fysiek.
@@ -64,7 +59,7 @@ const metadata = {
     id="voordelen"
     tagline="Voordelen"
     title="Dit biedt onze aikidoschool"
-    subtitle="Onze Aikido-school biedt een inspirerende omgeving waar je fysieke kracht, mentale balans en zelfvertrouwen ontwikkelt door traditionele technieken en moderne inzichten te combineren. Onder begeleiding van ervaren instructeurs leer je jezelf te verdedigen, harmonie te vinden en sterker in het leven te staan."
+    subtitle="Onze Arnhemse Aikido-school biedt een inspirerende omgeving waar je fysieke kracht, mentale balans en zelfvertrouwen ontwikkelt door traditionele technieken en moderne inzichten te combineren. Onder begeleiding van ervaren instructeurs leer je jezelf te verdedigen, harmonie te vinden en sterker in het leven te staan."
     items={[
       {
         title: 'Verbeterde conditie',
@@ -112,7 +107,7 @@ const metadata = {
     tagline="Onze school van binnen"
     title="Aikido in Arnhem en Wageningen"
     image={{
-      src: '~/assets/images/side-view-male-martial-arts-instructor-training-practice-hall-with-trainee.jpg',
+      src: '~/assets/images/sensei-geworpen.jpg',
       alt: 'Colorful Image',
     }}
   >
@@ -273,4 +268,5 @@ const metadata = {
       De beste tijd om met aikido te beginnen is nu.<br class="hidden md:inline" />Wacht niet langer!
     </Fragment>
   </CallToAction>
+
 </Layout>
