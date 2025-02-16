@@ -11,7 +11,7 @@ metadata:
   title:
     default: 'Aikido in Arnhem'
     template: '%s — aikido'
-  description: "Leer Aikido in Arnhem bij Aikidoschool Sankaku. Aikido-lessen voor beginners en gevorderden. Meld je aan voor een proefles!"
+  description: "Leer Aikido in Presikhaaf (Arnhem Oost) bij Aikidoschool Sankaku. Aikido-lessen voor beginners en gevorderden. Meld je aan voor een proefles!"
   robots:
     index: true
     follow: true
