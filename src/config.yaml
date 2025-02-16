@@ -6,22 +6,29 @@ site:
 
   googleSiteVerificationId: xxx-XXXX_XXXX
 
-# Default SEO metadata
+# SEO metadata
 metadata:
   title:
-    default: 'Aikidoschool Sankaku'
+    default: 'Aikido in Arnhem'
     template: '%s — aikido'
-  description: "School voor Aikido in Arnhem en Wageningen"
+  description: "Leer Aikido in Presikhaaf (Arnhem Oost) bij Aikidoschool Sankaku. Aikido-lessen voor beginners en gevorderden. Meld je aan voor een proefles!"
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: 'Aikidoschool Sankaku'
+    site_name: 'Aikido in Arnhem - Aikido Lessen'
+    description: 'Leer Aikido in Arnhem bij Aikidoschool Sankaku. Aikido-lessen voor beginners en gevorderden.'
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/ikkyo200.jpg'
         width: 1200
         height: 628
     type: website
+  twitter:
+    handle: '@onwidget'
+    site: '@onwidget'
+    cardType: summary_large_image
+    title: 'Aikido in Arnhem - Aikido Lessen'
+    description: 'Leer Aikido in Arnhem bij Aikidoschool Sankaku. Aikido-lessen voor beginners en gevorderden.'
 
 i18n:
   language: nl
