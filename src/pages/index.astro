@@ -10,6 +10,7 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import FeaturesList from '~/components/FeaturesList.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
   title: 'Aikido in Arnhem - Lessen voor Beginners en Gevorderden',
@@ -18,7 +19,6 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-
   <!-- Hero Widget ******************* -->
 
   <Hero
@@ -31,21 +31,31 @@ const metadata = {
       },
       { text: 'Ontdek meer', href: '#voordelen' },
     ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'Aikido lessen voor beginners in Arnhem', title: "Leer Aikido in Arnhem - lessen voor beginners en gevorderden" }}
+    image={{
+      src: '~/assets/images/hero-image.png',
+      alt: 'Aikido lessen voor beginners in Arnhem',
+      title: 'Leer Aikido in Arnhem - lessen voor beginners en gevorderden',
+    }}
   >
     <Fragment slot="title">
-      Ontdek de kracht van <span class="hidden xl:inline">balans en zelfvertrouwen bij</span>
+      Ontdek de kracht van <span class="hidden xl:inline"
+        >balans en zelfvertrouwen bij</span
+      >
       <span class="text-accent dark:text-white highlight"> Aikido</span>
     </Fragment>
 
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        <span class="font-semibold">Aikidoschool Sankaku</span> is de plek in Arnhem om dit te ontdekken!</span
+        <span class="font-semibold">Aikidoschool Sankaku</span> is de plek in Arnhem
+        om dit te ontdekken!</span
       >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">Aikido Arnhem is er voor jou!</span>
-      Leer fysieke technieken voor zelfverdediging, ontwikkel je innerlijke kracht, balans en zelfvertrouwen. 
-      Aikido is meer dan een vechtsport; het is een levensfilosofie die je helpt om stress te verminderen, 
-      harmonie te vinden in jezelf en met anderen, en sterker in het leven te staan, zowel mentaal als fysiek.
+      <span class="block mb-1 sm:hidden font-bold text-blue-600"
+        >Aikido Arnhem is er voor jou!</span
+      >
+      Leer fysieke technieken voor zelfverdediging, ontwikkel je innerlijke kracht,
+      balans en zelfvertrouwen. Aikido is meer dan een vechtsport; het is een levensfilosofie
+      die je helpt om stress te verminderen, harmonie te vinden in jezelf en met
+      anderen, en sterker in het leven te staan, zowel mentaal als fysiek.
     </Fragment>
   </Hero>
 
@@ -88,7 +98,7 @@ const metadata = {
       {
         title: 'Toegankelijk voor iedereen',
         description:
-          "Onze lessen zijn geschikt voor alle leeftijden en niveaus, van beginners tot gevorderden.",
+          'Onze lessen zijn geschikt voor alle leeftijden en niveaus, van beginners tot gevorderden.',
         icon: 'tabler:users',
       },
       {
@@ -112,8 +122,19 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">De lessen</h3>
-      Naast het leren van aikido, is vooral het omgaan met elkaar heel belangrijk. In de les moet iedereen zich prettig kunnen voelen: jong of oud, man of vrouw, beginner of gevorderde, lenig of stijf. Tijdens de training wordt steeds gewisseld van partner, zodat men nu eens een enthousiasteling tegenover zich heeft waarmee flink wat aan de conditie wordt gewerkt, dan weer iemand van een wat gevorderde leeftijd, zodat men wat langzamer en geconcentreerder moet werken. Door dit voortdurend aanpassen en rekening houden met een nieuwe aikido-partner wordt men uiteindelijk niet alleen soepeler van lichaam maar ook van geest.
+      <h3
+        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
+      >
+        De lessen
+      </h3>
+      Naast het leren van aikido, is vooral het omgaan met elkaar heel belangrijk.
+      In de les moet iedereen zich prettig kunnen voelen: jong of oud, man of vrouw,
+      beginner of gevorderde, lenig of stijf. Tijdens de training wordt steeds gewisseld
+      van partner, zodat men nu eens een enthousiasteling tegenover zich heeft waarmee
+      flink wat aan de conditie wordt gewerkt, dan weer iemand van een wat gevorderde
+      leeftijd, zodat men wat langzamer en geconcentreerder moet werken. Door dit
+      voortdurend aanpassen en rekening houden met een nieuwe aikido-partner wordt
+      men uiteindelijk niet alleen soepeler van lichaam maar ook van geest.
     </Fragment>
 
     <Fragment slot="bg">
@@ -131,8 +152,21 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">De uiterlijke vorm</h3>
-    Bij aikido leer je reageren op slagen, stoten en ‘pakkingen’ op de pols, elleboog of schouders. Soms wordt gebruik gemaakt van houten wapens (mes, zwaard en stok) om op een grotere afstand van elkaar te leren werken. Door met de beweging van de aanval mee te gaan, wordt de kracht van de aanvaller uiteindelijk tegen hemzelf gekeerd. Door cirkel- en spiraal-vormige bewegingen zien de technieken er vaak heel sierlijk uit. Aan het eind van een techniek wordt de aanvaller geworpen of onder controle gehouden door middel van een klem op het gewricht. Deze klemmen werken over het algemeen via de natuurlijke bewegingsrichting van de gewrichten. Meestal wordt gewerkt in tweetallen. Om op snelheid te trainen wordt ook geoefend met meerdere aanvallers.
+      <h3
+        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
+      >
+        De uiterlijke vorm
+      </h3>
+      Bij aikido leer je reageren op slagen, stoten en ‘pakkingen’ op de pols, elleboog
+      of schouders. Soms wordt gebruik gemaakt van houten wapens (mes, zwaard en
+      stok) om op een grotere afstand van elkaar te leren werken. Door met de beweging
+      van de aanval mee te gaan, wordt de kracht van de aanvaller uiteindelijk tegen
+      hemzelf gekeerd. Door cirkel- en spiraal-vormige bewegingen zien de technieken
+      er vaak heel sierlijk uit. Aan het eind van een techniek wordt de aanvaller
+      geworpen of onder controle gehouden door middel van een klem op het gewricht.
+      Deze klemmen werken over het algemeen via de natuurlijke bewegingsrichting
+      van de gewrichten. Meestal wordt gewerkt in tweetallen. Om op snelheid te trainen
+      wordt ook geoefend met meerdere aanvallers.
     </Fragment>
 
     <Fragment slot="bg">
@@ -149,17 +183,18 @@ const metadata = {
       {
         title: 'Stap 1: <span class="font-medium">Doe een proefles</span>',
         description:
-          "Je bent altijd welkom voor een gratis proefles. Het is voldoende als je je voor het begin van de les meldt bij de lesgever, zodat je nog even kunt kennismaken. Speciale kleding is niet vereist. Een lange, gemakkelijk zittende broek (joggingbroek) en T-shirt (geen hemdje) is prima. Neem een paar slippers mee, waarmee je van de kleedkamer naar de zaal kunt lopen. (Aikido wordt beoefend op blote voeten)",
+          'Je bent altijd welkom voor een gratis proefles. Het is voldoende als je je voor het begin van de les meldt bij de lesgever, zodat je nog even kunt kennismaken. Speciale kleding is niet vereist. Een lange, gemakkelijk zittende broek (joggingbroek) en T-shirt (geen hemdje) is prima. Neem een paar slippers mee, waarmee je van de kleedkamer naar de zaal kunt lopen. (Aikido wordt beoefend op blote voeten)',
         icon: 'tabler:info-square-rounded',
       },
       {
         title: 'Stap 2: <span class="font-medium">Schrijf je in</span>',
         description:
-          "Na je gratis proefles kun je ervoor kiezen om je in te schrijven bij onze school. Dit doe je eenvoudig door het online inschrijfformulier in te vullen. Alle praktische informatie, zoals de lestijden en de contributie, kun je op deze site vinden. Zodra je bent ingeschreven, ben je van harte welkom om deel te nemen aan de lessen!",
+          'Na je gratis proefles kun je ervoor kiezen om je in te schrijven bij onze school. Dit doe je eenvoudig door het online inschrijfformulier in te vullen. Alle praktische informatie, zoals de lestijden en de contributie, kun je op deze site vinden. Zodra je bent ingeschreven, ben je van harte welkom om deel te nemen aan de lessen!',
         icon: 'tabler:pencil',
       },
       {
-        title: 'Stap 3: <span class="font-medium">Schaf een aikido pak aan</span>',
+        title:
+          'Stap 3: <span class="font-medium">Schaf een aikido pak aan</span>',
         description:
           'De volgende stap is het aanschaffen van een Aikido-pak (gi). Dit biedt je de bewegingsvrijheid en comfort die je nodig hebt tijdens de lessen. Je kunt een gi aanschaffen via ons, via marktplaats of in een winkel.  In de beginfase is je proefleskleding prima, maar we raden aan om je gi binnen enkele weken na je start aan te schaffen.',
         icon: 'tabler:shirt',
@@ -177,7 +212,7 @@ const metadata = {
 
   <!-- Features list ************** -->
 
-  <FeaturesList/>
+  <FeaturesList />
 
   <!-- HighlightedPosts Widget ******* -->
 
@@ -194,48 +229,95 @@ const metadata = {
     tagline="FAQs"
     classes={{ container: 'max-w-6xl' }}
     items={[
-        {
-    "title": "Wat is Aikido?",
-    "description": "Aikido is een Japanse krijgskunst die gericht is op zelfverdediging zonder de tegenstander schade toe te brengen. Het combineert circulaire bewegingen en technieken om de energie van een aanval om te leiden."
-  },
-  {
-    "title": "Voor wie is Aikido geschikt?",
-    "description": "Aikido is geschikt voor mensen van alle leeftijden en fitnessniveaus. Het richt zich op techniek en innerlijke balans in plaats van fysieke kracht."
-  },
-  {
-    "title": "Is Aikido effectief voor zelfverdediging?",
-    "description": "Ja, Aikido is effectief voor zelfverdediging. Het richt zich op het neutraliseren van aanvallen door gebruik te maken van de kracht en beweging van de aanvaller."
-  },
-  {
-    "title": "Moet ik fit of sterk zijn om Aikido te beoefenen?",
-    "description": "Nee, Aikido vereist geen uitzonderlijke kracht of fitheid. De nadruk ligt op techniek en balans, wat het toegankelijk maakt voor iedereen."
-  },
-  {
-    "title": "Wat heb ik nodig om met Aikido te beginnen?",
-    "description": "Je hebt comfortabele kleding nodig, zoals een trainingsbroek en een T-shirt. Later kun je een gi (traditioneel uniform) aanschaffen."
-  },
-  {
-    "title": "Hoe verschilt Aikido van andere krijgskunsten?",
-    "description": "In tegenstelling tot veel andere krijgskunsten richt Aikido zich op harmonie en het vermijden van confrontatie. Het is niet competitief en streeft naar het minimaliseren van geweld."
-  },
-  {
-    "title": "Hoe vaak moet ik trainen om vooruitgang te boeken?",
-    "description": "Dit hangt af van je persoonlijke doelen, maar meestal wordt 2-3 keer per week trainen aanbevolen om vooruitgang te zien."
-  },
-  {
-    "title": "Is er een rangsysteem in Aikido?",
-    "description": "Ja, Aikido gebruikt een rangsysteem met gekleurde banden voor beginners (kyu-rangen) en zwarte banden voor gevorderden (dan-rangen)."
-  },
-  {
-    "title": "Kan ik Aikido beoefenen als ik lichamelijke beperkingen heb?",
-    "description": "Ja, Aikido kan vaak worden aangepast aan individuele behoeften. Bespreek eventuele beperkingen met je instructeur om een passende aanpak te vinden."
-  },
-  {
-    "title": "Hoe lang duurt het om een zwarte band in Aikido te behalen?",
-    "description": "Het behalen van een zwarte band kan 5-10 jaar duren, afhankelijk van je toewijding, trainingsfrequentie en vooruitgang."
-  }
+      {
+        title: 'Wat is Aikido?',
+        description:
+          'Aikido is een Japanse krijgskunst die gericht is op zelfverdediging zonder de tegenstander schade toe te brengen. Het combineert circulaire bewegingen en technieken om de energie van een aanval om te leiden.',
+      },
+      {
+        title: 'Voor wie is Aikido geschikt?',
+        description:
+          'Aikido is geschikt voor mensen van alle leeftijden en fitnessniveaus. Het richt zich op techniek en innerlijke balans in plaats van fysieke kracht.',
+      },
+      {
+        title: 'Is Aikido effectief voor zelfverdediging?',
+        description:
+          'Ja, Aikido is effectief voor zelfverdediging. Het richt zich op het neutraliseren van aanvallen door gebruik te maken van de kracht en beweging van de aanvaller.',
+      },
+      {
+        title: 'Moet ik fit of sterk zijn om Aikido te beoefenen?',
+        description:
+          'Nee, Aikido vereist geen uitzonderlijke kracht of fitheid. De nadruk ligt op techniek en balans, wat het toegankelijk maakt voor iedereen.',
+      },
+      {
+        title: 'Wat heb ik nodig om met Aikido te beginnen?',
+        description:
+          'Je hebt comfortabele kleding nodig, zoals een trainingsbroek en een T-shirt. Later kun je een gi (traditioneel uniform) aanschaffen.',
+      },
+      {
+        title: 'Hoe verschilt Aikido van andere krijgskunsten?',
+        description:
+          'In tegenstelling tot veel andere krijgskunsten richt Aikido zich op harmonie en het vermijden van confrontatie. Het is niet competitief en streeft naar het minimaliseren van geweld.',
+      },
+      {
+        title: 'Hoe vaak moet ik trainen om vooruitgang te boeken?',
+        description:
+          'Dit hangt af van je persoonlijke doelen, maar meestal wordt 2-3 keer per week trainen aanbevolen om vooruitgang te zien.',
+      },
+      {
+        title: 'Is er een rangsysteem in Aikido?',
+        description:
+          'Ja, Aikido gebruikt een rangsysteem met gekleurde banden voor beginners (kyu-rangen) en zwarte banden voor gevorderden (dan-rangen).',
+      },
+      {
+        title: 'Kan ik Aikido beoefenen als ik lichamelijke beperkingen heb?',
+        description:
+          'Ja, Aikido kan vaak worden aangepast aan individuele behoeften. Bespreek eventuele beperkingen met je instructeur om een passende aanpak te vinden.',
+      },
+      {
+        title: 'Hoe lang duurt het om een zwarte band in Aikido te behalen?',
+        description:
+          'Het behalen van een zwarte band kan 5-10 jaar duren, afhankelijk van je toewijding, trainingsfrequentie en vooruitgang.',
+      },
     ]}
   />
+
+  <!-- Stats Widget ****************** -->
+
+  <Features2
+    title="Onze verbondenheid"
+    tagline="de aikido wereld"
+    items={[
+      {
+        title: 'Budo Sport Arnhem',
+        description:
+          'Onze budo vrienden in Presikhaaf (Arnhem Oost) waar onze dojo is.',
+        icon: 'tabler:building-pavilion',
+        href: 'https://www.budosportarnhem.nl',
+        target: '_blank',
+      },
+      {
+        title: 'Judo Bond Nederland',
+        description:
+          'De JBN organiseert onze examens en verzorgt de lerarenopleiding.',
+        icon: 'tabler:flag-filled',
+        href: 'https://www.jbn.nl/aikido/',
+        target: '_blank',
+      },
+      {
+        title: 'Aikikai Foundation Japan',
+        description:
+          'Ons lijntje met de officiële internationale organisatie in Japan.',
+        icon: 'tabler:world',
+        href: 'http://www.aikikai.or.jp',
+        target: '_blank',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-transparent"></div>
+    </Fragment>
+  </Features2>
 
   <!-- Stats Widget ****************** -->
 
@@ -261,12 +343,15 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      Aikido&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">bij Sankaku</span>
+      Aikido&nbsp;<br class="block sm:hidden" /><span
+        class="sm:whitespace-nowrap">bij Sankaku</span
+      >
     </Fragment>
 
     <Fragment slot="subtitle">
-      De beste tijd om met aikido te beginnen is nu.<br class="hidden md:inline" />Wacht niet langer!
+      De beste tijd om met aikido te beginnen is nu.<br
+        class="hidden md:inline"
+      />Wacht niet langer!
     </Fragment>
   </CallToAction>
-
 </Layout>

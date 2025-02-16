@@ -32,8 +32,8 @@ const {
         containerClass
       )}
     >
-      {items.map(({ href, title, description, icon, callToAction, classes: itemClasses = {} }) => (
-        <a href={href}
+      {items.map(({ target, href, title, description, icon, callToAction, classes: itemClasses = {} }) => (
+        <a href={href} target={target}
           class={twMerge(
             'relative flex flex-col intersect-once intersect-quarter intercept-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
             panelClass,
