@@ -26,11 +26,15 @@ export default [
         extraFileExtensions: ['.astro'],
       },
     },
+    rules: {
+      quotes: ['error', 'single'],
+    },
   },
   {
     files: ['**/*.{js,jsx,astro}'],
     rules: {
       'no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
+      quotes: ['error', 'single'],
     },
   },
   {
@@ -51,6 +55,7 @@ export default [
         },
       ],
       '@typescript-eslint/no-non-null-assertion': 'off',
+      quotes: ['error', 'single'],
     },
   },
   {
