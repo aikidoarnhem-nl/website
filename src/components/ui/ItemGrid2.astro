@@ -3,6 +3,7 @@ import type { ItemGrid as Props } from '~/types';
 import { Icon } from 'astro-icon/components';
 import { twMerge } from 'tailwind-merge';
 import Button from './Button.astro';
+import Image from '~/components/common/Image.astro';
 
 const { items = [], columns, defaultIcon = '', classes = {} } = Astro.props;
 
@@ -29,31 +30,74 @@ const {
                 ? 'sm:grid-cols-2 '
                 : ''
         }`,
-        containerClass
+        containerClass,
       )}
     >
-      {items.map(({ target, href, title, description, icon, callToAction, classes: itemClasses = {} }) => (
-        <a href={href} target={target}
-          class={twMerge(
-            'relative flex flex-col intersect-once intersect-quarter intercept-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
-            panelClass,
-            itemClasses?.panel
-          )}
-        ><div>
-          {(icon || defaultIcon) && (
-            <Icon name={icon || defaultIcon} class={twMerge('mb-2 w-10 h-10', defaultIconClass, itemClasses?.icon)} />
-          )}
-          <div class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</div>
-          {description && (
-            <p class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)} set:html={description} />
-          )}
-          {callToAction && (
-            <div class="mt-2">
-              <Button {...callToAction} />
+      {items.map(
+        ({
+          image,
+          target,
+          href,
+          title,
+          description,
+          icon,
+          callToAction,
+          classes: itemClasses = {},
+        }) => (
+          <a
+            href={href}
+            target={target}
+            class={twMerge(
+              'relative flex flex-col intersect-once intersect-quarter intercept-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
+              panelClass,
+              itemClasses?.panel,
+            )}
+          >
+            <div>
+              {(icon || defaultIcon) && (
+                <Icon
+                  name={icon || defaultIcon}
+                  class={twMerge(
+                    'mb-2 w-10 h-10',
+                    defaultIconClass,
+                    itemClasses?.icon,
+                  )}
+                />
+              )}
+              <div
+                class={twMerge(
+                  'text-xl font-bold',
+                  titleClass,
+                  itemClasses?.title,
+                )}
+              >
+                {title}
+              </div>
+              {description && (
+                <p
+                  class={twMerge(
+                    'text-muted mt-2',
+                    descriptionClass,
+                    itemClasses?.description,
+                  )}
+                  set:html={description}
+                />
+              )}
+              {callToAction && (
+                <div class="mt-2">
+                  <Button {...callToAction} />
+                </div>
+              )}
+              {image && (
+                <Image
+                  loading="eager"
+                  {...image}
+                />
+              )}
             </div>
-          )}
-        </div></a>
-      ))}
+          </a>
+        ),
+      )}
     </div>
   )
 }
