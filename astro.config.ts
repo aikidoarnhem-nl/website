@@ -25,6 +25,9 @@ export default defineConfig({
   output: 'static',
   site: 'https://www.aikidoarnhem.nl',
   trailingSlash: 'never',
+  build: {
+    format: 'file',
+  },
 
   integrations: [
     tailwind({
