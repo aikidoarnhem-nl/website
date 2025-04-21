@@ -24,6 +24,10 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 export default defineConfig({
   output: 'static',
   site: 'https://www.aikidoarnhem.nl',
+  trailingSlash: 'never',
+  build: {
+    format: 'file',
+  },
 
   integrations: [
     tailwind({
@@ -94,7 +98,5 @@ export default defineConfig({
     },
   },
 
-  experimental: {
-    svg: true,
-  },
+  experimental: { },
 });
