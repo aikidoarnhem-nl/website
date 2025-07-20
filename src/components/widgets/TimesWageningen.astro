@@ -1,0 +1,60 @@
+---
+import Content from '~/components/widgets/Content.astro';
+---
+ 
+<Content
+    items={[
+      {
+        icon: 'tabler:calendar',
+        pretitle:
+          'Dinsdagen \t 17:30 - 19:00 \t',
+        title: 'Volwassenen',
+        callToAction: {
+          text: 'Door Edy en Yvon',
+          href: 'mailto:edy@aikidoarnhem.nl',
+          icon: 'tabler:mail'
+        },
+      },
+      {
+        icon: 'tabler:calendar',
+        description: '8 tot 12 jaar',
+        pretitle:
+          'Woensdagen \t 16:45 - 17:45 \t',
+        title: 'Kinderen',
+        callToAction: {
+          text: 'Door Jeroen',
+          href: 'mailto:jeroen@aikidoarnhem.nl',
+          icon: 'tabler:mail'
+        },
+      },
+      {
+        icon: 'tabler:calendar',
+        description: '12 tot 17 jaar',
+        pretitle:
+          'Woensdagen \t 18:00 - 19:00 \t',
+        title: 'Jeugd',
+        callToAction: {
+          text: 'Door Jeroen',
+          href: 'mailto:jeroen@aikidoarnhem.nl',
+          icon: 'tabler:mail'
+        },
+      },
+      {
+        icon: 'tabler:calendar',
+        description: '',
+        pretitle:
+          'Vrijdagen \t 19:45 - 21:15 \t',
+        title: 'Volwassenen',
+        callToAction: {
+          text: 'Door Eltje',
+          href: 'mailto:eltje@aikidoarnhem.nl',
+          icon: 'tabler:mail'
+        },
+      },
+      ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Lestijden Wageningen</h3>
+      Locatie trainingscentrum KenKon, Nieuwe Kanaal 11, 6709 PA Wageningen
+    </Fragment>
+</Content>

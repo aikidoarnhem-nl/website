@@ -1,0 +1,51 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import TimesArnhem from '~/components/widgets/TimesArnhem.astro';
+import FeaturesList from '~/components/FeaturesList.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Locatie Arnhem',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero2
+    title="Locatie Arnhem">
+    <Fragment slot="subtitle">
+    In Arnhem vind je onze dojo bij Budo Sport Arnhem aan de Dunoweg 2:
+    </Fragment>
+    <Fragment slot="content">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2457.389921059316!2d5.9701677129677515!3d51.98154637180799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c7a38c1d8ce5e7%3A0xdd53f8866af759e4!2sAikidoschool%20Sankaku!5e0!3m2!1snl!2snl!4v1752940487526!5m2!1snl!2snl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </Fragment>
+  </Hero2>
+
+  <TimesArnhem/>
+
+  <FeaturesList location="Wageningen"/>
+
+    <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Proefles? Ja!',
+        href: '/#proefles',
+        icon: 'tabler:download',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Aikido&nbsp;<br class="block sm:hidden" /><span
+        class="sm:whitespace-nowrap">bij Sankaku</span
+      >
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      De beste tijd om met aikido te beginnen is nu.<br
+        class="hidden md:inline"
+      />Wacht niet langer!
+    </Fragment>
+  </CallToAction>
+
+</Layout>

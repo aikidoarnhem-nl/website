@@ -1,6 +1,10 @@
 ---
 import Features2 from '~/components/widgets/Features2.astro';
 import { getPermalink } from '~/utils/permalinks';
+
+const {
+    location = 'Arnhem',
+} = Astro.props;
 ---  
 
 <Features2
@@ -42,11 +46,17 @@ items={[
     icon: 'flat-color-icons:advertising',
     href: getPermalink('/p/lestijden')
     },
+    location == 'Arnhem' ?
     {
-    title: 'Locaties',
-    description: 'Google maps voor onze dojo\'s in Arnhem en Wageningen.',
+    title: 'Dojo Arnhem',
+    description: 'Google maps voor onze dojo in Arnhem.',
     icon: 'flat-color-icons:home',
-    href: getPermalink('/p/locaties')
+    href: getPermalink('/p/locatie-arnhem')
+    } : {
+          title: 'Dojo Wageningen',
+    description: 'Google maps voor onze dojo in Wageningen.',
+    icon: 'flat-color-icons:home',
+    href: getPermalink('/p/locatie-wageningen')  
     },
     {
     title: 'Inschrijven',
