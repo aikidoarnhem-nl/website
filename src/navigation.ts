@@ -14,8 +14,12 @@ export const headerData = {
           href: getPermalink('/p/lestijden'),
         },
         {
-          text: 'Locaties',
-          href: getPermalink('/p/locaties'),
+          text: 'Locatie Arnhem',
+          href: getPermalink('/p/locatie-arnhem'),
+        },
+        {
+          text: 'Locatie Wageningen',
+          href: getPermalink('/p/locatie-wageningen'),
         },
         {
           text: 'Leraren',
@@ -102,8 +106,12 @@ export const headerData = {
           href: getPermalink('/p/lestijden'),
         },
         {
-          text: 'Locaties',
-          href: getPermalink('/p/locaties'),
+          text: 'Locatie Arnhem',
+          href: getPermalink('/p/locatie-arnhem'),
+        },
+        {
+          text: 'Locatie Wageningen',
+          href: getPermalink('/p/locatie-wageningen'),
         },
         {
           text: 'Wijzigingsformulier',
