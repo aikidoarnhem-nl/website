@@ -10,7 +10,7 @@ Adres: 't Luifeltje, Dunoweg 2, 6825 ED Arnhem Presikhaaf
 ```
 Monday      20:15-21:45     adults              Sabine
 Thursday    18:30-19:30     youth 8-15 year     Pimm
-Thursday    19:00-20:30     adults              Edy
+Thursday    19:00-20:30     adults              Edy/Pimm
 Sunday      09:30-11:30     advanced students   Edy
 ```
 
