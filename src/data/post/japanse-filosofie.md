@@ -3,7 +3,7 @@ publishDate: 2025-01-19T00:00:00Z
 author: Jeroen Visscher
 title: 'Aikido en 8 Japanse Principes'
 excerpt: 'Aikido is meer dan een krijgskunst: het is een filosofie van groei en harmonie, geïnspireerd door tijdloze Japanse principes.'
-image: ~/assets/images/man-woman-fighting-training-aikido-white-studio-wall.jpg
+image: ~/assets/images/sensei-met-twee-pupillen.jpg
 category: Algemeen
 tags:
   - aikido
