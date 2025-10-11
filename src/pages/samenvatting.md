@@ -22,7 +22,7 @@ Adres: trainingscentrum KenKon, Nieuwe Kanaal 11, 6709 PA Wageningen
 ```
 Dinsdag     17:30-19:00     volwassenen         Edy/Yvon
 Woensdag    16:45-17:45     jeugd 7-11 jaar     Jeroen
-Woensdag    18:00-19:00     jeugd 1-16 jaar     Jeroen
+Woensdag    18:00-19:00     jeugd 12-16 jaar    Jeroen
 Vrijdag     19:45-21:15     volwassenen         Eltje
 ```
 
