@@ -18,7 +18,20 @@ const stripEn = (p: string) => {
 };
 const addEn = (p: string) => (p === '/' ? '/en' : `/en${p}`);
 
-const targetHref = currentLocale === 'en' ? stripEn(pathname) : addEn(pathname);
+// On the homepage, switching either way goes through the root Pages Function
+// via `?lang=`, so the choice is persisted server-side and the browser-language
+// redirect can never bounce you back. Subpages have no Function, so a direct
+// link to the counterpart page is fine (the click script sets a cookie too).
+const isHome = pathname === '/' || pathname === '/en';
+const targetHref =
+  currentLocale === 'en'
+    ? isHome
+      ? '/?lang=nl'
+      : stripEn(pathname)
+    : isHome
+      ? '/?lang=en'
+      : addEn(pathname);
+const targetLocale = currentLocale === 'en' ? 'nl' : 'en';
 const targetLabel = currentLocale === 'en' ? 'NL' : 'EN';
 const ariaLabel =
   currentLocale === 'en'
@@ -28,8 +41,20 @@ const ariaLabel =
 
 <a
   href={targetHref}
+  data-locale={targetLocale}
   aria-label={ariaLabel}
-  class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm font-semibold p-2.5 inline-flex items-center"
+  class="lang-switcher text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm font-semibold p-2.5 inline-flex items-center"
 >
   {targetLabel}
 </a>
+
+<script>
+  // Remember an explicit language choice so the homepage redirect honours it
+  // instead of re-applying the browser-language default on the next visit.
+  document.querySelectorAll('a.lang-switcher').forEach((el) => {
+    el.addEventListener('click', () => {
+      const locale = el.getAttribute('data-locale');
+      document.cookie = `lang=${locale}; path=/; max-age=31536000; samesite=lax`;
+    });
+  });
+</script>
