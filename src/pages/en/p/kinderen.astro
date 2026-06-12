@@ -1,0 +1,71 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import FeaturesList from '~/components/FeaturesList.astro';
+const metadata = {
+  title: 'Children',
+};
+---
+
+<Layout metadata={metadata}>
+  <Content
+    image={{
+      src: '~/assets/images/sensei-is-er-niet.jpg',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        What is aikido?
+      </h3>
+      What on earth is that? No, you can't eat it! Aikido is a Japanese sport. It looks
+      a little bit like judo, but really only a little bit. Just like in judo you wear
+      a judo suit, you train barefoot on a mat, and you learn to roll and fall. Apart
+      from that, aikido only looks like aikido! In aikido there are no competitions.
+      That might seem a shame, because then you can never win. But look at it from the
+      other side: you can also never lose! You learn all kinds of techniques that you
+      have to carry out in pairs. One person attacks, the other performs the technique.
+      Beforehand you agree who attacks, and with what kind of attack. That sounds more
+      dangerous than it is, because grabbing someone by the wrist is already called an
+      attack in aikido! But you also learn to respond to strikes and thrusts. If you
+      do aikido for a while, you become very supple, and you stand more firmly on your
+      legs. You learn to react quickly and your fitness improves. Sometimes we train
+      with 'weapons': a wooden sword, the boken, a staff, the jo, or a wooden knife,
+      the tanto. We don't do that very often, because then you need a lot of extra
+      space and the hall soon becomes too small. But sometimes it is good to practise;
+      it all seems just a bit more real, perhaps a bit scarier, so that you work extra
+      hard and pay more attention.
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    image={{
+      src: '~/assets/images/sensei-met-pupil.jpg',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        History
+      </h3>
+      In Japan the knights were called 'samurai'. They were important men; you could
+      not just become a samurai. Just like European knights, the samurai were of noble
+      birth. Honour, honesty, courage and loyalty - those were what they valued. From
+      the time they were toddlers they learned to fight and to ride horses, but also
+      to write neatly and how to behave when, for example, you have to visit the
+      emperor. Many things in aikido come from this: for instance, we sometimes train
+      on our knees - because in Japan they sat on the floor at home, and you also have
+      to learn how to defend yourself if you are attacked during lunch! We also don't
+      kick in aikido. Kicking, the samurai felt, belongs to street fighting. After all,
+      you don't show the other person the soles of your feet, which are dirty from the
+      street! If you have been doing aikido for a long time (5 years or so) your teacher
+      may perhaps let you wear a 'hakama'. That is a long black or dark-blue garment
+      that you put on over your judo suit. A hakama is very wide with lots of pleats.
+      If you don't look carefully it almost looks like a skirt! With a hakama like that
+      you look just like a Japanese knight!
+    </Fragment>
+  </Content>
+
+  <FeaturesList />
+</Layout>

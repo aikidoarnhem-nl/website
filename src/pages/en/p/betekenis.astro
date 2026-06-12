@@ -1,0 +1,44 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import FeaturesList from '~/components/FeaturesList.astro';
+import Chatbot from '~/components/widgets/Chatbot.astro';
+
+const metadata = {
+  title: 'Meaning',
+};
+---
+
+<Layout metadata={metadata}>
+  <Content
+    image={{
+      src: '~/assets/images/roloefening.jpg',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        The word Aikido
+      </h3>
+      In Japanese, aikido is written with three characters, Ai, Ki and Do. It is often
+      translated as ai=harmony, ki=energy and do=way, so 'the way to deal harmoniously
+      with the energy of yourself and the other'. It turns out, however, to be a little
+      more complicated. 'Aiki' is a Japanese word, originating in the martial arts,
+      that is written with two characters. In the past it meant something like: becoming
+      equal to your partner. In a martial art that is not very useful: if by definition
+      you respond softly when your partner attacks softly, or respond hard when your
+      partner attacks hard, then you are rather predictable... O Sensei, the founder
+      of aikido, broadened that meaning in the sense of: becoming one with your partner.
+      You have no opponent, and you can only respond well to the other once both your
+      movements become one. On top of that, the first character, Ai, in Japanese sounds
+      like 'love, compassion' in the sense of love for all that lives and exists. O
+      Sensei rather liked that as a happy coincidence, so he was content with the term
+      aikido. He himself did not feel it necessary at all to give his movements a name,
+      but after much insistence from his students he was able to agree to it...
+    </Fragment>
+  </Content>
+
+  <FeaturesList />
+
+  <Chatbot />
+</Layout>

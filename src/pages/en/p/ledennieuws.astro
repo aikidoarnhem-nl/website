@@ -1,0 +1,76 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+
+const metadata = {
+  title: 'Member news',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText title="Member news">
+    <Fragment slot="subtitle"> JBN affiliation number: 06-228 </Fragment>
+  </HeroText>
+
+  <Content
+    image={{
+      src: '~/assets/images/irimi200.jpg',
+      alt: 'Black/white aikido technique',
+    }}
+    items={[
+      {
+        icon: 'tabler:download',
+        callToAction: {
+          text: 'Vaardigheidseisen_danexamen_aikido',
+          href: '/pdfs/dan/vaardigheidseisen_danexamen_aikido.pdf',
+          target: '_blank',
+        },
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Examination requirements, first to fourth dan
+      </h3>
+      In Vaardigheidseisen_danexamen_aikido.pdf you will find the dan examination guidelines
+      drawn up by the National Grades Commission Aikido (28 April 2004). The technical
+      requirements are in accordance with the national method. For this, the book by
+      Nobuyoshi Tamura, L'aikido, méthode nationale (Aikido, the national method) can
+      serve as a guide.
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    image={{
+      src: '~/assets/images/ikkyo200.jpg',
+      alt: 'Black/white aikido technique',
+    }}
+    items={[
+      {
+        icon: 'tabler:mail',
+        callToAction: {
+          text: 'Discussion group',
+          href: 'https://groups.google.com/g/aikidoarnhem',
+        },
+      },
+      {
+        icon: 'tabler:mail',
+        callToAction: {
+          text: 'Email Edy',
+          href: 'mailto:edy@aikidoarnhem.nl',
+        },
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Discussion group
+      </h3>
+      Below is the link to the discussion group. The discussion group is only accessible
+      to members of Sankaku. Would you like to become a member but find it difficult
+      to create an account? Send Edy an email and he will arrange this for you.
+    </Fragment>
+  </Content>
+</Layout>

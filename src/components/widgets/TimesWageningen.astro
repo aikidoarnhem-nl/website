@@ -1,60 +1,64 @@
 ---
 import Content from '~/components/widgets/Content.astro';
+
+const isEn = Astro.currentLocale === 'en';
+
+const items = [
+  {
+    icon: 'tabler:calendar',
+    pretitle: isEn ? 'Tuesdays \t 17:30 - 19:00 \t' : 'Dinsdagen \t 17:30 - 19:00 \t',
+    title: isEn ? 'Adults' : 'Volwassenen',
+    callToAction: {
+      text: isEn ? 'By Edy and Yvon' : 'Door Edy en Yvon',
+      href: 'mailto:edy@aikidoarnhem.nl',
+      icon: 'tabler:mail',
+    },
+  },
+  {
+    icon: 'tabler:calendar',
+    description: isEn ? '8 to 12 years' : '8 tot 12 jaar',
+    pretitle: isEn ? 'Wednesdays \t 16:45 - 17:45 \t' : 'Woensdagen \t 16:45 - 17:45 \t',
+    title: isEn ? 'Children' : 'Kinderen',
+    callToAction: {
+      text: isEn ? 'By Jeroen' : 'Door Jeroen',
+      href: 'mailto:jeroen@aikidoarnhem.nl',
+      icon: 'tabler:mail',
+    },
+  },
+  {
+    icon: 'tabler:calendar',
+    description: isEn ? '12 to 17 years' : '12 tot 17 jaar',
+    pretitle: isEn ? 'Wednesdays \t 18:00 - 19:00 \t' : 'Woensdagen \t 18:00 - 19:00 \t',
+    title: isEn ? 'Youth' : 'Jeugd',
+    callToAction: {
+      text: isEn ? 'By Jeroen' : 'Door Jeroen',
+      href: 'mailto:jeroen@aikidoarnhem.nl',
+      icon: 'tabler:mail',
+    },
+  },
+  {
+    icon: 'tabler:calendar',
+    description: '',
+    pretitle: isEn ? 'Fridays \t 19:45 - 21:15 \t' : 'Vrijdagen \t 19:45 - 21:15 \t',
+    title: isEn ? 'Adults' : 'Volwassenen',
+    callToAction: {
+      text: isEn ? 'By Eltje' : 'Door Eltje',
+      href: 'mailto:eltje@aikidoarnhem.nl',
+      icon: 'tabler:mail',
+    },
+  },
+];
 ---
- 
-<Content
-    items={[
-      {
-        icon: 'tabler:calendar',
-        pretitle:
-          'Dinsdagen \t 17:30 - 19:00 \t',
-        title: 'Volwassenen',
-        callToAction: {
-          text: 'Door Edy en Yvon',
-          href: 'mailto:edy@aikidoarnhem.nl',
-          icon: 'tabler:mail'
-        },
-      },
-      {
-        icon: 'tabler:calendar',
-        description: '8 tot 12 jaar',
-        pretitle:
-          'Woensdagen \t 16:45 - 17:45 \t',
-        title: 'Kinderen',
-        callToAction: {
-          text: 'Door Jeroen',
-          href: 'mailto:jeroen@aikidoarnhem.nl',
-          icon: 'tabler:mail'
-        },
-      },
-      {
-        icon: 'tabler:calendar',
-        description: '12 tot 17 jaar',
-        pretitle:
-          'Woensdagen \t 18:00 - 19:00 \t',
-        title: 'Jeugd',
-        callToAction: {
-          text: 'Door Jeroen',
-          href: 'mailto:jeroen@aikidoarnhem.nl',
-          icon: 'tabler:mail'
-        },
-      },
-      {
-        icon: 'tabler:calendar',
-        description: '',
-        pretitle:
-          'Vrijdagen \t 19:45 - 21:15 \t',
-        title: 'Volwassenen',
-        callToAction: {
-          text: 'Door Eltje',
-          href: 'mailto:eltje@aikidoarnhem.nl',
-          icon: 'tabler:mail'
-        },
-      },
-      ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Lestijden Wageningen</h3>
-      Locatie trainingscentrum KenKon, Nieuwe Kanaal 11, 6709 PA Wageningen
-    </Fragment>
+
+<Content items={items}>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      {isEn ? 'Class times Wageningen' : 'Lestijden Wageningen'}
+    </h3>
+    {
+      isEn
+        ? 'Location training centre KenKon, Nieuwe Kanaal 11, 6709 PA Wageningen'
+        : 'Locatie trainingscentrum KenKon, Nieuwe Kanaal 11, 6709 PA Wageningen'
+    }
+  </Fragment>
 </Content>

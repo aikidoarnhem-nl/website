@@ -1,58 +1,61 @@
 ---
 import Content from '~/components/widgets/Content.astro';
+
+const isEn = Astro.currentLocale === 'en';
+
+const items = [
+  {
+    icon: 'tabler:calendar',
+    pretitle: isEn ? 'Mondays \t\t 20:15 - 21:45 \t' : 'Maandagen \t\t 20:15 - 21:45 \t',
+    title: isEn ? 'Adults' : 'Volwassenen',
+    callToAction: {
+      text: isEn ? 'By Sabine' : 'Door Sabine',
+      href: 'mailto:sabine@aikidoarnhem.nl',
+      icon: 'tabler:mail',
+    },
+  },
+  {
+    icon: 'tabler:calendar',
+    pretitle: isEn ? 'Thursdays \t 18:30 - 19:30 \t' : 'Donderdagen \t 18:30 - 19:30 \t',
+    title: isEn ? 'Youth' : 'Jeugd',
+    description: isEn ? '8 to 15 years' : '8 tot 15 jaar',
+    callToAction: {
+      text: isEn ? 'By Pimm' : 'Door Pimm',
+    },
+  },
+  {
+    icon: 'tabler:calendar',
+    pretitle: isEn ? 'Thursdays \t 19:00 - 20:30 \t' : 'Donderdagen \t 19:00 - 20:30 \t',
+    title: isEn ? 'Adults' : 'Volwassenen',
+    callToAction: {
+      text: isEn ? 'By Edy and Pimm' : 'Door Edy en Pimm',
+      href: 'mailto:edy@aikidoarnhem.nl',
+      icon: 'tabler:mail',
+    },
+  },
+  {
+    icon: 'tabler:calendar',
+    description: isEn ? 'Check the calendar for exceptions' : 'Check de kalender voor uitzonderingen',
+    pretitle: isEn ? 'Sundays \t\t 09:30 - 11:30 \t' : 'Zondagen \t\t 09:30 - 11:30 \t',
+    title: isEn ? 'Advanced' : 'Gevorderden',
+    callToAction: {
+      text: isEn ? 'By Edy' : 'Door Edy',
+      href: 'mailto:edy@aikidoarnhem.nl',
+      icon: 'tabler:mail',
+    },
+  },
+];
 ---
 
-  <Content
-    items={[
-      {
-        icon: 'tabler:calendar',
-        pretitle:
-          'Maandagen \t\t 20:15 - 21:45 \t',
-        title: 'Volwassenen',
-        callToAction: {
-          text: 'Door Sabine',
-          href: 'mailto:sabine@aikidoarnhem.nl',
-          icon: 'tabler:mail'
-        },
-      },
-      {
-        icon: 'tabler:calendar',
-        pretitle:
-          'Donderdagen \t 18:30 - 19:30 \t',
-        title: 'Jeugd',
-        description: '8 tot 15 jaar',
-        callToAction: {
-          text: 'Door Pimm',
-
-        },
-      },
-      {
-        icon: 'tabler:calendar',
-        pretitle:
-          'Donderdagen \t 19:00 - 20:30 \t',
-        title: 'Volwassenen',
-        callToAction: {
-          text: 'Door Edy en Pimm',
-          href: 'mailto:edy@aikidoarnhem.nl',
-          icon: 'tabler:mail'
-        },
-      },
-      {
-        icon: 'tabler:calendar',
-        description: 'Check de kalender voor uitzonderingen',
-        pretitle:
-          'Zondagen \t\t 09:30 - 11:30 \t',
-        title: 'Gevorderden',
-        callToAction: {
-          text: 'Door Edy',
-          href: 'mailto:edy@aikidoarnhem.nl',
-          icon: 'tabler:mail'
-        },
-      },
-      ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Lestijden Arnhem</h3>
-      Locatie 't Luifeltje, Dunoweg 2, 6825 ED Arnhem Presikhaaf
-    </Fragment>
+<Content items={items}>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+      {isEn ? 'Class times Arnhem' : 'Lestijden Arnhem'}
+    </h3>
+    {
+      isEn
+        ? 'Location \'t Luifeltje, Dunoweg 2, 6825 ED Arnhem Presikhaaf'
+        : 'Locatie \'t Luifeltje, Dunoweg 2, 6825 ED Arnhem Presikhaaf'
+    }
+  </Fragment>
 </Content>
