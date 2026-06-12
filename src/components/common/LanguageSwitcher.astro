@@ -1,0 +1,35 @@
+---
+const currentLocale = Astro.currentLocale ?? 'nl';
+
+// Normalise the pathname so the logic works in dev (e.g. "/en") and in the
+// static `format: 'file'` build (e.g. "/en.html", "/en/p/lestijden.html").
+const normalisePath = (p: string) => {
+  let path = p.replace(/\.html$/, ''); // drop trailing .html
+  path = path.replace(/\/index$/, ''); // drop trailing /index
+  if (path.length > 1) path = path.replace(/\/$/, ''); // drop trailing slash
+  return path === '' ? '/' : path;
+};
+const pathname = normalisePath(Astro.url.pathname);
+
+// Toggle the /en prefix on the current pathname to reach the counterpart page.
+const stripEn = (p: string) => {
+  const stripped = p.replace(/^\/en(?=\/|$)/, '');
+  return stripped === '' ? '/' : stripped;
+};
+const addEn = (p: string) => (p === '/' ? '/en' : `/en${p}`);
+
+const targetHref = currentLocale === 'en' ? stripEn(pathname) : addEn(pathname);
+const targetLabel = currentLocale === 'en' ? 'NL' : 'EN';
+const ariaLabel =
+  currentLocale === 'en'
+    ? 'Bekijk deze pagina in het Nederlands'
+    : 'View this page in English';
+---
+
+<a
+  href={targetHref}
+  aria-label={ariaLabel}
+  class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm font-semibold p-2.5 inline-flex items-center"
+>
+  {targetLabel}
+</a>

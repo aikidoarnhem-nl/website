@@ -1,0 +1,356 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import FeaturesList from '~/components/FeaturesList.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Aikido in Arnhem - Classes for Beginners and Advanced Students',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Trial classes',
+        href: '#proefles',
+        icon: 'tabler:download',
+      },
+      { text: 'Discover more', href: '#voordelen' },
+    ]}
+    image={{
+      src: '~/assets/images/hero-image.png',
+      alt: 'Aikido classes for beginners in Arnhem',
+      title:
+        'Learn Aikido in Presikhaaf (Arnhem East) - classes for beginners and advanced students',
+    }}
+  >
+    <Fragment slot="title">
+      Discover the power of <span class="hidden xl:inline"
+        >balance and self-confidence through</span
+      >
+      <span class="text-accent dark:text-white highlight"> Aikido</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">Aikido school Sankaku</span> is the place in
+        Arnhem to discover this!</span
+      >
+      <span class="block mb-1 sm:hidden font-bold text-blue-600"
+        >Aikido Arnhem is here for you!</span
+      >
+      Learn physical techniques for self-defence, develop your inner strength, balance
+      and self-confidence. Aikido is more than a martial art; it is a philosophy
+      of life that helps you to reduce stress, find harmony within yourself and with
+      others, and stand stronger in life, both mentally and physically.
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="voordelen"
+    tagline="Benefits"
+    title="What our aikido school offers"
+    subtitle="Our Arnhem-based Aikido school offers an inspiring environment where you develop physical strength, mental balance and self-confidence by combining traditional techniques with modern insights. Under the guidance of experienced instructors you learn to defend yourself, find harmony and stand stronger in life."
+    items={[
+      {
+        title: 'Improved fitness',
+        description:
+          'Aikido training is a full-body workout that builds strength, flexibility and stamina.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Balance and inner calm',
+        description:
+          'Aikido helps you stay balanced both physically and mentally, even in challenging situations.',
+        icon: 'tabler:yin-yang',
+      },
+      {
+        title: 'No competition',
+        description:
+          ' Instead of fighting against each other, you focus on cooperation and self-improvement.',
+        icon: 'tabler:peace',
+      },
+      {
+        title: 'Experienced instructors',
+        description:
+          'Guidance from qualified and passionate teachers with years of experience.',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Accessible to everyone',
+        description:
+          'Our classes are suitable for all ages and levels, from beginners to advanced students.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Close by',
+        description:
+          'On the edge of Presikhaaf (Arnhem East), so within cycling distance of Velp and Westervoort, and close to Duiven and Rheden.',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="Our school from the inside"
+    title="Aikido in Arnhem and Wageningen"
+    image={{
+      src: '~/assets/images/sensei-geworpen.jpg',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3
+        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
+      >
+        The classes
+      </h3>
+      Besides learning aikido, how we treat one another is especially important.
+      In class, everyone should feel comfortable: young or old, man or woman, beginner
+      or advanced, supple or stiff. During training you constantly switch partners,
+      so that at one moment you face an enthusiast with whom you work hard on your
+      fitness, and the next someone of a more advanced age, so that you have to work
+      more slowly and with greater concentration. By continually adapting to and
+      taking account of a new aikido partner, you ultimately become more supple not
+      only in body but also in mind.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    image={{
+      src: '~/assets/images/man-woman-fighting-training-aikido-white.jpg',
+      alt: 'Blueprint Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3
+        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
+      >
+        The outward form
+      </h3>
+      In aikido you learn to respond to strikes, thrusts and grabs to the wrist,
+      elbow or shoulders. Sometimes wooden weapons (knife, sword and staff) are used
+      to learn to work at a greater distance from each other. By moving along with
+      the motion of the attack, the attacker's force is ultimately turned back against
+      themselves. Through circular and spiral movements the techniques often look
+      very graceful. At the end of a technique the attacker is thrown or held under
+      control by means of a joint lock. These locks generally work along the natural
+      direction of movement of the joints. Most of the time you work in pairs. To
+      train for speed, you also practise with multiple attackers.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id="proefles"
+    title="Discover the magical world of winning without fighting!"
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Take a trial class</span>',
+        description:
+          'You are always welcome for a free trial class. It is enough to let the instructor know before the class starts, so you can get acquainted. Special clothing is not required. Long, comfortable trousers (tracksuit bottoms) and a T-shirt (no vest) are fine. Bring a pair of slippers to walk from the changing room to the hall. (Aikido is practised barefoot.)',
+        icon: 'tabler:info-square-rounded',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Register</span>',
+        description:
+          'After your free trial class you can choose to register with our school. You do this simply by filling in the online registration form. All practical information, such as the class times and the fees, can be found on this site. Once you are registered, you are warmly welcome to take part in the classes!',
+        icon: 'tabler:pencil',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Get an aikido suit</span>',
+        description:
+          'The next step is getting an aikido suit (gi). This gives you the freedom of movement and comfort you need during classes. You can buy a gi through us, via a marketplace site or in a shop. In the early stages your trial-class clothing is fine, but we recommend getting your gi within a few weeks of starting.',
+        icon: 'tabler:shirt',
+      },
+      {
+        title: 'You are now an aikidoka!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Steps image',
+    }}
+  />
+
+  <!-- Features list ************** -->
+
+  <FeaturesList />
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <BlogLatestPosts
+    title="See our blog too for more inspiration."
+    linkText="View all posts"
+    information=""
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently asked questions"
+    subtitle="Discover the answers to these questions and learn how Aikido can help you with self-development, inner balance and effective self-defence."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'What is Aikido?',
+        description:
+          'Aikido is a Japanese martial art focused on self-defence without causing harm to the opponent. It combines circular movements and techniques to redirect the energy of an attack.',
+      },
+      {
+        title: 'Who is Aikido suitable for?',
+        description:
+          'Aikido is suitable for people of all ages and fitness levels. It focuses on technique and inner balance rather than physical strength.',
+      },
+      {
+        title: 'Is Aikido effective for self-defence?',
+        description:
+          'Yes, Aikido is effective for self-defence. It focuses on neutralising attacks by using the strength and movement of the attacker.',
+      },
+      {
+        title: 'Do I need to be fit or strong to practise Aikido?',
+        description:
+          'No, Aikido does not require exceptional strength or fitness. The emphasis is on technique and balance, which makes it accessible to everyone.',
+      },
+      {
+        title: 'What do I need to start Aikido?',
+        description:
+          'You need comfortable clothing, such as training trousers and a T-shirt. Later you can get a gi (traditional uniform).',
+      },
+      {
+        title: 'How does Aikido differ from other martial arts?',
+        description:
+          'Unlike many other martial arts, Aikido focuses on harmony and avoiding confrontation. It is not competitive and strives to minimise violence.',
+      },
+      {
+        title: 'How often should I train to make progress?',
+        description:
+          'This depends on your personal goals, but generally training 2-3 times a week is recommended to see progress.',
+      },
+      {
+        title: 'Is there a ranking system in Aikido?',
+        description:
+          'Yes, Aikido uses a ranking system with coloured belts for beginners (kyu grades) and black belts for advanced students (dan grades).',
+      },
+      {
+        title: 'Can I practise Aikido if I have physical limitations?',
+        description:
+          'Yes, Aikido can often be adapted to individual needs. Discuss any limitations with your instructor to find a suitable approach.',
+      },
+      {
+        title: 'How long does it take to earn a black belt in Aikido?',
+        description:
+          'Earning a black belt can take 5-10 years, depending on your dedication, training frequency and progress.',
+      },
+    ]}
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <Features2
+    title="Our connections"
+    tagline="the aikido world"
+    items={[
+      {
+        title: 'Budo Sport Arnhem',
+        description:
+          'Our budo friends in Presikhaaf (Arnhem East) where our dojo is located.',
+        icon: 'tabler:building-pavilion',
+        href: 'https://www.budosportarnhem.nl',
+        target: '_blank',
+      },
+      {
+        title: 'Judo Bond Nederland',
+        description:
+          'The JBN organises our examinations and provides the teacher training.',
+        icon: 'tabler:flag-filled',
+        href: 'https://www.jbn.nl/aikido/',
+        target: '_blank',
+      },
+      {
+        title: 'Aikikai Foundation Japan',
+        description:
+          'Our link to the official international organisation in Japan.',
+        icon: 'tabler:world',
+        href: 'http://www.aikikai.or.jp/eng/',
+        target: '_blank',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Practitioners', amount: '1m+' },
+      { title: 'Netherlands', amount: '10,000+' },
+      { title: 'Countries', amount: '130+' },
+      { title: 'Styles', amount: '20-30' },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Start now',
+        href: '#proefles',
+        icon: 'tabler:download',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Aikido&nbsp;<br class="block sm:hidden" /><span
+        class="sm:whitespace-nowrap">at Sankaku</span
+      >
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      The best time to start aikido is now.<br class="hidden md:inline" />Don't
+      wait any longer!
+    </Fragment>
+  </CallToAction>
+</Layout>

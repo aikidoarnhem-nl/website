@@ -3,7 +3,12 @@ import Layout from '~/layouts/Layout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
 
-import { headerData, footerData } from '~/navigation';
+import {
+  headerData,
+  footerData,
+  headerDataEn,
+  footerDataEn,
+} from '~/navigation';
 import SideLogo from '~/assets/images/side-logo.svg';
 import type { MetaData } from '~/types';
 
@@ -12,11 +17,22 @@ export interface Props {
 }
 
 const { metadata } = Astro.props;
+
+const isEn = Astro.currentLocale === 'en';
+const header = isEn ? headerDataEn : headerData;
+const footer = isEn ? footerDataEn : footerData;
 ---
 
 <Layout metadata={metadata}>
   <slot name="header">
-    <Header {...headerData} isSticky doNotshowRssFeed showToggleTheme position=left />
+    <Header
+      {...header}
+      isSticky
+      doNotshowRssFeed
+      showToggleTheme
+      showLanguageSwitcher
+      position="left"
+    />
   </slot>
   <main>
     <div class="flex flex-row min-h-screen">
@@ -32,6 +48,6 @@ const { metadata } = Astro.props;
     </div>
   </main>
   <slot name="footer">
-    <Footer {...footerData} />
+    <Footer {...footer} />
   </slot>
 </Layout>

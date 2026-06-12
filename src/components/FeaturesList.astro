@@ -2,84 +2,109 @@
 import Features2 from '~/components/widgets/Features2.astro';
 import { getPermalink } from '~/utils/permalinks';
 
-const {
-    location = 'Arnhem',
-} = Astro.props;
----  
+const { location = 'Arnhem' } = Astro.props;
+
+const isEn = Astro.currentLocale === 'en';
+const link = (path: string) => (isEn ? `/en${path}` : getPermalink(path));
+
+const widgetTitle = isEn ? 'More about aikido' : 'Meer over aikido';
+const widgetSubtitle = isEn
+  ? 'Discover everything about aikido and our school.'
+  : 'Ontdek alles over aikido en onze school.';
+const widgetTagline = isEn ? 'further' : 'verder';
+
+const items = [
+  {
+    title: isEn ? 'Meaning' : 'Betekenis',
+    description: isEn
+      ? 'Aikido comes from Japan; what exactly does it mean?'
+      : 'Aikido komt uit Japan; wat betekent het precies?',
+    icon: 'flat-color-icons:graduation-cap',
+    href: link('/p/betekenis'),
+  },
+  {
+    title: isEn ? 'History' : 'Geschiedenis',
+    description: isEn
+      ? 'More about the origins and the founder of Aikido.'
+      : 'Meer over de oorsprong en de grondlegger van Aikdo.',
+    icon: 'flat-color-icons:film-reel',
+    href: link('/p/geschiedenis'),
+  },
+  {
+    title: isEn ? 'Children' : 'Kinderen',
+    description: isEn
+      ? 'How suitable is Aikido for children?'
+      : 'Hoe geschikt is Aikido voor kinderen?',
+    icon: 'flat-color-icons:conference-call',
+    href: link('/p/kinderen'),
+  },
+  {
+    title: isEn ? 'Teachers' : 'Leraren',
+    description: isEn
+      ? 'Read more about the teachers at our school.'
+      : 'Lees meer over de leraren van onze school.',
+    icon: 'flat-color-icons:business-contact',
+    href: link('/p/leraren'),
+  },
+  {
+    title: isEn ? 'Class times' : 'Lestijden',
+    description: isEn
+      ? 'An overview of the class times for the various locations.'
+      : 'Een overzicht van de lestijden voor de verschillende locaties.',
+    icon: 'flat-color-icons:advertising',
+    href: link('/p/lestijden'),
+  },
+  location == 'Arnhem'
+    ? {
+        title: isEn ? 'Dojo Arnhem' : 'Dojo Arnhem',
+        description: isEn
+          ? 'Google maps for our dojo in Arnhem.'
+          : 'Google maps voor onze dojo in Arnhem.',
+        icon: 'flat-color-icons:home',
+        href: link('/p/locatie-arnhem'),
+      }
+    : {
+        title: isEn ? 'Dojo Wageningen' : 'Dojo Wageningen',
+        description: isEn
+          ? 'Google maps for our dojo in Wageningen.'
+          : 'Google maps voor onze dojo in Wageningen.',
+        icon: 'flat-color-icons:home',
+        href: link('/p/locatie-wageningen'),
+      },
+  {
+    title: isEn ? 'Registration' : 'Inschrijven',
+    description: isEn
+      ? 'Here you find our page with the registration form.'
+      : 'Hier vind je onze pagina met inschrijfformulier.',
+    icon: 'flat-color-icons:voice-presentation',
+    href: link('/aanmelden'),
+  },
+  {
+    title: isEn ? 'Fees' : 'Lesgeld',
+    description: isEn
+      ? 'We run on volunteers and ask a fee for the hall rental and the mats.'
+      : 'We draaien op vrijwilligers en vragen lesgeld voor de zaalhuur en de matten.',
+    icon: 'flat-color-icons:currency-exchange',
+    href: link('/aanmelden#lesgeld'),
+  },
+  {
+    title: isEn ? 'Calendar' : 'Kalender',
+    description: isEn
+      ? 'View our regular activities and extra events.'
+      : 'Bekijk onze vaste activeiten en extra evenementen.',
+    icon: 'flat-color-icons:calendar',
+    href: link('/p/kalender'),
+  },
+];
+---
 
 <Features2
-title="Meer over aikido"
-subtitle="Ontdek alles over aikido en onze school."
-tagline="verder"
-items={[
-    {
-    title: 'Betekenis',
-    description: 'Aikido komt uit Japan; wat betekent het precies?',
-    icon: 'flat-color-icons:graduation-cap',
-    href: getPermalink('/p/betekenis')
-    },
-    {
-    title: 'Geschiedenis',
-    description:
-        'Meer over de oorsprong en de grondlegger van Aikdo.',
-    icon: 'flat-color-icons:film-reel',
-    href: getPermalink('/p/geschiedenis')
-    },
-    {
-    title: 'Kinderen',
-    description:
-        'Hoe geschikt is Aikido voor kinderen?',
-    icon: 'flat-color-icons:conference-call',
-    href: getPermalink('/p/kinderen')
-    },
-    {
-    title: 'Leraren',
-    description:
-        'Lees meer over de leraren van onze school.',
-    icon: 'flat-color-icons:business-contact',
-    href: getPermalink('/p/leraren')
-    },
-    {
-    title: 'Lestijden',
-    description:
-        'Een overzicht van de lestijden voor de verschillende locaties.',
-    icon: 'flat-color-icons:advertising',
-    href: getPermalink('/p/lestijden')
-    },
-    location == 'Arnhem' ?
-    {
-    title: 'Dojo Arnhem',
-    description: 'Google maps voor onze dojo in Arnhem.',
-    icon: 'flat-color-icons:home',
-    href: getPermalink('/p/locatie-arnhem')
-    } : {
-          title: 'Dojo Wageningen',
-    description: 'Google maps voor onze dojo in Wageningen.',
-    icon: 'flat-color-icons:home',
-    href: getPermalink('/p/locatie-wageningen')  
-    },
-    {
-    title: 'Inschrijven',
-    description: 'Hier vind je onze pagina met inschrijfformulier.',
-    icon: 'flat-color-icons:voice-presentation',
-    href: getPermalink('/aanmelden')
-    },
-    {
-    title: 'Lesgeld',
-    description:
-        'We draaien op vrijwilligers en vragen lesgeld voor de zaalhuur en de matten.',
-    icon: 'flat-color-icons:currency-exchange',
-    href: getPermalink('/aanmelden#lesgeld')
-    },
-    {
-    title: 'Kalender',
-    description: 'Bekijk onze vaste activeiten en extra evenementen.',
-    icon: 'flat-color-icons:calendar',
-    href: getPermalink('/p/kalender')
-    },
-]}
+  title={widgetTitle}
+  subtitle={widgetSubtitle}
+  tagline={widgetTagline}
+  items={items}
 >
-<Fragment slot="bg">
+  <Fragment slot="bg">
     <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-</Fragment>
+  </Fragment>
 </Features2>

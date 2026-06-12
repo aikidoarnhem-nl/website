@@ -1,11 +1,24 @@
 ---
 import { Icon } from 'astro-icon/components';
+
+const isEn = Astro.currentLocale === 'en';
+const quote = isEn
+  ? '"True victory is victory over oneself"'
+  : '"Ware overwinning is zelfoverwinning"';
+const attribution = isEn ? '(founder of Aikido)' : '(grondlegger van Aikido)';
 ---
 
 <section class="bg-blue-50 dark:bg-slate-800 not-prose">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 text-md text-center font-medium">
+  <div
+    class="max-w-6xl mx-auto px-4 sm:px-6 py-4 text-md text-center font-medium"
+  >
     <span class="font-bold">
-      <Icon name="tabler:info-square" class="w-5 h-5 inline-block align-text-bottom" />Morihei Ueshiba  — </span
-    > "Ware overwinning is zelfoverwinning" (grondlegger van Aikido)
+      <Icon
+        name="tabler:info-square"
+        class="w-5 h-5 inline-block align-text-bottom"
+      />Morihei Ueshiba —
+    </span>
+    {quote}
+    {attribution}
   </div>
 </section>

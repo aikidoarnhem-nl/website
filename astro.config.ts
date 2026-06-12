@@ -13,18 +13,37 @@ import type { AstroIntegration } from 'astro';
 
 import astrowind from './vendor/integration';
 
-import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
+import {
+  readingTimeRemarkPlugin,
+  responsiveTablesRehypePlugin,
+  lazyImagesRehypePlugin,
+} from './src/utils/frontmatter';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const hasExternalScripts = false;
-const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroIntegration)[] = []) =>
-  hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
+const whenExternalScripts = (
+  items: (() => AstroIntegration) | (() => AstroIntegration)[] = [],
+) =>
+  hasExternalScripts
+    ? Array.isArray(items)
+      ? items.map((item) => item())
+      : [items()]
+    : [];
 
 export default defineConfig({
   output: 'static',
   site: 'https://www.aikidoarnhem.nl',
   trailingSlash: 'never',
+
+  i18n: {
+    locales: ['nl', 'en'],
+    defaultLocale: 'nl',
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
+
   build: {
     format: 'file',
   },
@@ -60,7 +79,7 @@ export default defineConfig({
     ...whenExternalScripts(() =>
       partytown({
         config: { forward: ['dataLayer.push'] },
-      })
+      }),
     ),
 
     compress({
@@ -98,5 +117,5 @@ export default defineConfig({
     },
   },
 
-  experimental: { },
+  experimental: {},
 });
