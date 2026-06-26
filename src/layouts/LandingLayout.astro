@@ -14,7 +14,7 @@ const { metadata } = Astro.props;
 <PageLayout metadata={metadata}>
   <Fragment slot="header">
     <slot name="header">
-      <Header showToggleTheme />
+      <Header showToggleMenu={false} />
     </slot>
   </Fragment>
   <slot />
