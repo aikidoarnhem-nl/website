@@ -1,0 +1,118 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+const metadata = {
+  title: 'Teachers',
+};
+---
+
+<Layout metadata={metadata}>
+  <Content
+    items={[
+      {
+        icon: 'tabler:user',
+        title: 'Edy Kamalski / 6th dan / Teacher B',
+        callToAction: {
+          text: 'Email Edy',
+          href: 'mailto:edy@aikidoarnhem.nl',
+          icon: 'tabler:mail',
+        },
+      },
+      {
+        icon: 'tabler:user',
+        title: 'Yvon / 5th dan / Teacher B',
+        callToAction: {
+          text: 'Email Yvon',
+          href: 'mailto:yvon@aikidoarnhem.nl',
+          icon: 'tabler:mail',
+        },
+      },
+      {
+        icon: 'tabler:user',
+        title: 'Sabine Lebenstedt / 3rd dan / Teacher B',
+        callToAction: {
+          text: 'Email Sabine',
+          href: 'mailto:sabine@aikidoarnhem.nl',
+          icon: 'tabler:mail',
+        },
+      },
+      {
+        icon: 'tabler:user',
+        title: 'Eltje Boons / 1st dan / Teacher A',
+        callToAction: {
+          text: 'Email Eltje',
+          href: 'mailto:eltje@aikidoarnhem.nl',
+          icon: 'tabler:mail',
+        },
+      },
+      {
+        icon: 'tabler:user',
+        title: 'Pimm / 1st dan / Assistant',
+      },
+      {
+        icon: 'tabler:user',
+        title: 'Jeroen Visscher / 3rd dan / Teacher A',
+        callToAction: {
+          text: 'Email Jeroen',
+          href: 'mailto:jeroen@aikidoarnhem.nl',
+          icon: 'tabler:mail',
+        },
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Teachers
+      </h3>
+      These teachers are affiliated with Stichting Sankaku. All of them hold a state
+      teaching qualification.
+    </Fragment>
+  </Content>
+
+  <Content
+    image={{
+      src: '~/assets/images/sensei-met-zwaard.jpg',
+      alt: 'Black/white aikido technique',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Never finished learning
+      </h3>
+      All teachers at Sankaku continue to take classes themselves, sometimes in the
+      Netherlands but also abroad. This way they not only improve their own teaching
+      abilities, but also stay up to date with all developments within aikido. Teachers
+      of the teachers are: Tamura-sensei, Sugano-sensei, Tony Smibert, Carel Zappey,
+      Pierre Geraedts, Claude Pellerin and Toshiro Suga.
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    image={{
+      src: '~/assets/images/ikkyo200.jpg',
+      alt: 'Black/white aikido technique',
+    }}
+    items={[
+      {
+        icon: 'tabler:download',
+        callToAction: {
+          text: 'Download code of conduct',
+          href: 'https://dxyxhgylzfhzl.cloudfront.net/5.04-Gedragscode-JBN-leerkrachten_180614_130003.pdf?v=1528974003',
+          target: '_blank',
+        },
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Code of conduct
+      </h3>
+      For all our teachers and volunteers we apply the JBN code of conduct. We only
+      take on volunteers from within our own membership. The teachers of the foundation
+      decide together whether someone seems suitable for the task. For all teachers
+      and volunteers, from June 2020 onwards a VOG (Certificate of Conduct) is requested
+      every 5 years.
+    </Fragment>
+  </Content>
+</Layout>

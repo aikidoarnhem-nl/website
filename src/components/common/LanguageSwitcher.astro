@@ -1,0 +1,60 @@
+---
+const currentLocale = Astro.currentLocale ?? 'nl';
+
+// Normalise the pathname so the logic works in dev (e.g. "/en") and in the
+// static `format: 'file'` build (e.g. "/en.html", "/en/p/lestijden.html").
+const normalisePath = (p: string) => {
+  let path = p.replace(/\.html$/, ''); // drop trailing .html
+  path = path.replace(/\/index$/, ''); // drop trailing /index
+  if (path.length > 1) path = path.replace(/\/$/, ''); // drop trailing slash
+  return path === '' ? '/' : path;
+};
+const pathname = normalisePath(Astro.url.pathname);
+
+// Toggle the /en prefix on the current pathname to reach the counterpart page.
+const stripEn = (p: string) => {
+  const stripped = p.replace(/^\/en(?=\/|$)/, '');
+  return stripped === '' ? '/' : stripped;
+};
+const addEn = (p: string) => (p === '/' ? '/en' : `/en${p}`);
+
+// On the homepage, switching either way goes through the root Pages Function
+// via `?lang=`, so the choice is persisted server-side and the browser-language
+// redirect can never bounce you back. Subpages have no Function, so a direct
+// link to the counterpart page is fine (the click script sets a cookie too).
+const isHome = pathname === '/' || pathname === '/en';
+const targetHref =
+  currentLocale === 'en'
+    ? isHome
+      ? '/?lang=nl'
+      : stripEn(pathname)
+    : isHome
+      ? '/?lang=en'
+      : addEn(pathname);
+const targetLocale = currentLocale === 'en' ? 'nl' : 'en';
+const targetLabel = currentLocale === 'en' ? 'NL' : 'EN';
+const ariaLabel =
+  currentLocale === 'en'
+    ? 'Bekijk deze pagina in het Nederlands'
+    : 'View this page in English';
+---
+
+<a
+  href={targetHref}
+  data-locale={targetLocale}
+  aria-label={ariaLabel}
+  class="lang-switcher text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm font-semibold p-2.5 inline-flex items-center"
+>
+  {targetLabel}
+</a>
+
+<script>
+  // Remember an explicit language choice so the homepage redirect honours it
+  // instead of re-applying the browser-language default on the next visit.
+  document.querySelectorAll('a.lang-switcher').forEach((el) => {
+    el.addEventListener('click', () => {
+      const locale = el.getAttribute('data-locale');
+      document.cookie = `lang=${locale}; path=/; max-age=31536000; samesite=lax`;
+    });
+  });
+</script>

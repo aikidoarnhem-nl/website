@@ -1,0 +1,56 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import TimesArnhem from '~/components/widgets/TimesArnhem.astro';
+import TimesWageningen from '~/components/widgets/TimesWageningen.astro';
+import Features from '~/components/widgets/Features.astro';
+const metadata = {
+  title: 'Class times',
+};
+---
+
+<Layout metadata={metadata}>
+  <TimesArnhem />
+
+  <TimesWageningen />
+
+  <Features
+    title="Holidays"
+    items={[
+      {
+        title: 'Arnhem children/youth',
+        description:
+          'There are no youth and children classes during the primary-school holidays in the south Netherlands region.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Wageningen children/youth',
+        description:
+          'There are no youth and children classes during the primary-school holidays in the central Netherlands region.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Arnhem summer',
+        description:
+          'There are no indoor classes during the primary-school summer holidays in the south Netherlands region.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Wageningen summer',
+        description:
+          'There are no indoor classes during the primary-school summer holidays in the central Netherlands region. During that period there are, however, outdoor weapons classes every Tuesday in the Belmonte Arboretum from 18:00 - 19:30.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Public holidays',
+        description:
+          'We do not teach on official public holidays. There are no classes on Good Friday, Easter Monday, Kings Day, Ascension Day, the Friday after Ascension and Whit Monday. There are also no classes during the Christmas holidays.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: '5 May',
+        description: 'In Wageningen we do not teach on 5 May.',
+        icon: 'tabler:calendar',
+      },
+    ]}
+  />
+</Layout>

@@ -1,0 +1,60 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Contact" title="Let's get to know each other!">
+    <Fragment slot="subtitle">
+      For more information email: <a href="mailto:aikido@aikidoarnhem.nl"
+        >aikido@aikidoarnhem.nl</a
+      >. The teachers' email addresses can be found on the teachers page.
+    </Fragment>
+  </HeroText>
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="We are here to help!"
+    items={[
+      {
+        title: 'General questions',
+        description:
+          'There is an FAQ at the bottom of our homepage. Feel free to email us if your question is not among them.',
+      },
+      {
+        title: 'Fees',
+        description:
+          'Our sign-up page explains everything about the costs. We are happy to help if you have any questions about this.',
+      },
+      {
+        title: 'Class content',
+        description:
+          'If you have questions about the content of the classes, it is best to contact the teacher. They are happy to make time for this before or after class!',
+      },
+      {
+        title: 'Email',
+        description: 'aikido@aikidoarnhem.nl',
+        href: 'mailto:aikido@aikidoarnhem.nl',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Location',
+        description: '\'t Luifeltje, Dunoweg 2, 6825 ED Arnhem Presikhaaf',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'By phone',
+        description: 'not available',
+        icon: 'tabler:headset',
+      },
+    ]}
+  />
+</Layout>

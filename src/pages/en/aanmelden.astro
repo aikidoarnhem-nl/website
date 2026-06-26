@@ -1,0 +1,247 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Sign up',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText title="Sign up">
+    <Fragment slot="subtitle">
+      If you would like to start, we ask you to fill in the online registration form.
+      You can find this Google form by choosing 'Register now' below.
+    </Fragment>
+  </HeroText>
+
+  <!-- Pricing Widget ******************* -->
+
+  <Prices
+    id="lesgeld"
+    title="The fees"
+    subtitle="Our school runs entirely on volunteers. This allows us to keep the costs low."
+    prices={[
+      {
+        title: 'trial class',
+        subtitle: 'Check whether we are a good match',
+        price: '0',
+        period: 'once or twice',
+        items: [
+          {
+            description: 'No obligation',
+          },
+          {
+            description: 'No need to sign up',
+          },
+          {
+            description: 'No special clothing needed',
+          },
+        ],
+        callToAction: {
+          text: 'See class times',
+          href: '/en/p/lestijden',
+        },
+      },
+      {
+        title: 'Basic',
+        subtitle: 'Ideal to begin with or alongside other sports',
+        price: '25,-',
+        period: 'Per month',
+        items: [
+          {
+            description: 'Once a week',
+          },
+          {
+            description: '€300,- per year',
+          },
+          {
+            description: 'Arnhem: Monday, Thursday',
+          },
+          {
+            description: 'Wageningen: Tuesday, Friday',
+          },
+        ],
+        callToAction: {
+          text: 'Register now',
+          href: '/en/landing/inschrijven',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'popular',
+      },
+      {
+        title: 'Premium',
+        subtitle: 'For when aikido has captured you',
+        price: '37,50',
+        period: 'Per month',
+        items: [
+          {
+            description: 'Twice or more a week',
+          },
+          {
+            description: '€450,- per year',
+          },
+          {
+            description: 'Arnhem: Monday, Thursday',
+          },
+          {
+            description: 'Wageningen: Tuesday, Friday',
+          },
+        ],
+        callToAction: {
+          text: 'Register now',
+          href: '/en/landing/inschrijven',
+        },
+      },
+    ]}
+  />
+
+  <Prices
+    title=""
+    prices={[
+      {
+        title: 'Children',
+        subtitle: 'aged 7 to 11',
+        price: '18,50',
+        period: 'Per month',
+        items: [
+          {
+            description: 'Once a week',
+          },
+          {
+            description: '€220,- per year',
+          },
+          {
+            description: 'Arnhem: Thursday',
+          },
+          {
+            description: 'Wageningen: Wednesday',
+          },
+        ],
+        callToAction: {
+          text: 'Register now',
+          href: '/en/landing/inschrijven',
+        },
+      },
+      {
+        title: 'Youth',
+        subtitle: 'aged 12 to 16',
+        price: '20,-',
+        period: 'Per month',
+        items: [
+          {
+            description: 'Once a week',
+          },
+          {
+            description: '€240,- per year',
+          },
+          {
+            description: 'Arnhem: Thursday',
+          },
+          {
+            description: 'Wageningen: Wednesday',
+          },
+        ],
+        callToAction: {
+          text: 'Register now',
+          href: '/en/landing/inschrijven',
+        },
+      },
+    ]}
+  />
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="More about the fees"
+    subtitle=""
+    columns={2}
+    items={[
+      {
+        title: 'Standing order',
+        description:
+          'We ask participants to set up a standing order with their own bank. That way you never pay late, while keeping control of your own finances.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Account number',
+        description:
+          'Fees must be transferred to Triodos account number NL74 TRIO 0786 7914 11 in the name of Stichting Sankaku in Arnhem.',
+        icon: 'tabler:shopping-cart',
+      },
+      {
+        title: 'To premium',
+        description:
+          'If you train more than once a week, simply adjust your own standing order. And the other way round too, of course!',
+        icon: 'tabler:chevrons-up',
+      },
+      {
+        title: 'Flexible',
+        description:
+          'Can\'t make your regular class time? Feel free to choose another day to train.',
+        icon: 'tabler:users',
+      },
+    ]}
+    classes={{ container: 'max-w-5xl' }}
+  />
+
+  <!-- nice image -->
+
+  <Hero
+    image={{
+      src: 'https://images.unsplash.com/photo-1618676156034-df5979d43c7a?q=80&w=2333&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      alt: 'Aikido Hero Image',
+    }}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Fees FAQ"
+    subtitle=""
+    columns={1}
+    items={[
+      {
+        title: 'Can I pay per month?',
+        description:
+          'We prefer it if you pay per year, as it keeps our administration simple. If this is a problem for you, please feel free to pay per month.',
+      },
+      {
+        title: 'What is the notice period?',
+        description:
+          'We apply a notice period of 1 month. We will refund any fees paid in excess.',
+      },
+      {
+        title: 'How do I switch from basic to premium or back?',
+        description:
+          'Just adjust your own standing order. It would be helpful if you let the teacher know.',
+      },
+      {
+        title: 'Can you collect the fees from me by direct debit?',
+        description:
+          'Unfortunately we have no option for this at the moment. Banks charge considerable fees for it, which we would rather give back to you.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Ready to discover aikido?"
+    subtitle="Join our group of enthusiastic aikidoka and transform towards peace."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Go for it!',
+        href: '/en',
+      },
+    ]}
+  />
+</Layout>
