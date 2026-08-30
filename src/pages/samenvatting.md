@@ -32,6 +32,8 @@ Vrijdag     19:45-21:15     volwassenen         Eltje
 ```
 Jeugd        7-11 jaar      222.00 euro per jaar, 18.50 euro per maand
 Jeugd       12-16 jaar      240.00 euro per jaar, 20.00 euro per maand
-Volwassenen 1x per week     300.00 euro per jaar, 25.00 euro per maand
-Volwassenen 2x of meer      450.00 euro per jaar, 37.50 euro per maand
+Volwassenen basis (beginners, 2x per week)    300.00 euro per jaar, 25.00 euro per maand
+Volwassenen premium (gevorderden, onbeperkt)  450.00 euro per jaar, 37.50 euro per maand
 ```
+
+Alle doordeweekse lessen zijn beginnerslessen (ook al trainen er gevorderden mee). De zondagtraining in Arnhem is voor gevorderden.
