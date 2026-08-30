@@ -20,10 +20,10 @@ Sunday      09:30-11:30     advanced students   Edy
 Adres: trainingscentrum KenKon, Nieuwe Kanaal 11, 6709 PA Wageningen
 
 ```
-Dinsdag     17:30-19:00     adults              Edy/Yvon
+Tuesday     17:30-19:00     adults              Edy/Yvon
 Wednesday   16:45-17:45     youth  7-11 year    Jeroen
-Wednesday   18.00-19:00     youth 12-16 year    Jeroen
-Vrijdag     19:45-21:15     adults              Eltje
+Wednesday   18:00-19:00     youth 12-16 year    Jeroen
+Friday      19:45-21:15     adults              Eltje
 ```
 
 
