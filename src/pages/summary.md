@@ -31,7 +31,9 @@ Vrijdag     19:45-21:15     adults              Eltje
 
 ```
 Youth        7-11 year      222.00 euro per year, 18.50 euro per month
-Youth       12-16 year      240.00 euro per year, 22.00 euro per month
-Adults      1x a week       300.00 euro per year, 25.00 euro per month
-Adults      2x or more      450.00 euro per year, 37.50 euro per month
+Youth       12-16 year      240.00 euro per year, 20.00 euro per month
+Adults      basic (beginners, 2x per week)    300.00 euro per year, 25.00 euro per month
+Adults      premium (advanced, unlimited)     450.00 euro per year, 37.50 euro per month
 ```
+
+All weekday lessons are beginner level (even though advanced students join in). The Sunday training in Arnhem is for advanced students.
